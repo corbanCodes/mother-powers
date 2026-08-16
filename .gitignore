@@ -1,0 +1,15 @@
+# Never commit secrets
+*.env
+.env*
+open-ai.txt
+*api*key*
+*API*KEY*
+secrets/
+# OS
+.DS_Store
+Thumbs.db
+
+# Raw AI generation output (regenerable, not shipped)
+assets/img/_src/
+__pycache__/
+*.pyc

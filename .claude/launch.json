@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mother-powers",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "5062"],
+      "port": 5062
+    }
+  ]
+}
