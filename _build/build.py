@@ -7,7 +7,7 @@ OUT = os.path.dirname(HERE)
 from shell import (head, banner, header, footer, callband, rule, ICON, MARK,
                    TEL_MAIN, TEL_MAIN_FMT, TEL_ALT, TEL_ALT_FMT, CASHAPP, PO_BOX)
 from content import (CATEGORIES, OFFERINGS, TESTIMONIALS, FAQ, DREAM_BOOKS,
-                     CANDLES, PRAYERS, DREAM_SIGNS, NUMEROLOGY)
+                     CANDLES, INCENSE, PRAYERS, DREAM_SIGNS, NUMEROLOGY)
 
 def write(path, html):
     full = os.path.join(OUT, path)
@@ -136,11 +136,6 @@ HER_ADS = [
  ("assets/web-gen/ad-success-love-laughter.jpg","Success, Love, Laughter", "&ldquo;I do what others claim to do&rdquo;"),
 ]
 
-BOOK_PAGES = [
- ("assets/web-gen/catalog-tip-sheets.jpg",     "Monthly Tip Sheets",     "$30 for six months, $45 for the year"),
- ("assets/web-gen/catalog-kits-mojo-bags.jpg", "Blessed Kits &amp; Mojo Bags", "$100 a kit, and up"),
- ("assets/web-gen/catalog-monkey-paw.jpg",     "Lucky Hand &amp; Oils",  "$7.98 to $79.95"),
-]
 
 # ---------------------------------------------------------------- pages
 def build_home():
@@ -168,6 +163,7 @@ def build_home():
       <img src="assets/claude-photos/hero-altar.jpg" alt="A candlelit altar with prayer candles, an open book of psalms and dried herbs" fetchpriority="high" decoding="async">
     </picture>
   </div>
+  <div class="incense" aria-hidden="true"><span></span><span></span><span></span><i class="ember"></i></div>
   <div class="hero-in">
     <div class="wrap">
       <p class="eyebrow rv">Spiritual Healer &middot; Reader &middot; Numerologist</p>
@@ -201,8 +197,8 @@ def build_home():
         help you, through your time in need, whether it is through love, luck, happiness, sickness,
         marriage, health or business.&rdquo;</p>
         <p style="color:var(--muted)">Mother Powers has been reading and praying for people for a lifetime,
-        and her page has run in the dream books for more than thirty years. You may have read it there, or
-        heard about her from somebody who called her first. She answers her own telephone, she takes her time with you, and she tells you the truth
+        and her page has run in print for more than thirty years. You may have read it somewhere, or heard
+        about her from somebody who called her first. She answers her own telephone, she takes her time with you, and she tells you the truth
         even when the truth is that there is nothing wrong.</p>
         <p style="color:var(--muted)">And I promise that my work is through God. If you are suffering, sick,
         or worried, I want to hear from you. God did not put you here to suffer &mdash; He put you here for
@@ -279,16 +275,16 @@ def build_home():
   <div class="wrap">
     <div class="center rv" style="max-width:640px;margin:0 auto clamp(34px,4.5vw,54px)">
       <img src="assets/claude-photos/orn-moonphases.png" alt="" class="orn" style="max-width:300px;margin-bottom:1.8rem" loading="lazy">
-      <p class="eyebrow center">Thirty years in the books</p>
+      <p class="eyebrow center">Thirty years in print</p>
       <h2 class="d2">You may already<br>know her <span class="script gold">name</span></h2>
       {rule()}
-      <p style="color:var(--parchment)">Mother Powers&rsquo; page has run in the lucky dream books for
-      more than thirty years. A great many of the people who call her had been reading it a long time
-      before they ever picked up the telephone.</p>
+      <p style="color:var(--parchment)">Mother Powers&rsquo; page has run in print for more than thirty
+      years. A great many of the people who call her had been reading it a long time before they ever
+      picked up the telephone.</p>
     </div>
     <div class="rv">{carousel(POSTERS, cid="posters")}</div>
     <div class="btn-row center rv" style="margin-top:clamp(28px,3.5vw,42px)">
-      <a class="btn btn-ghost" href="dream-books.html">See the Original Pages</a>
+      <a class="btn btn-ghost" href="dream-books.html">See Her Advertisements</a>
     </div>
   </div>
 </section>
@@ -312,8 +308,8 @@ def build_about():
       she devoted a lifetime to this work. She is a spiritual healer, a reader and advisor, and a
       numerologist, and she works out of the privacy of her own home in Tallahassee, Florida.</p>
 
-      <p>Her advertisement has run in the lucky dream books for over thirty years, and in that time she
-      has read for people in every state in the country &mdash; most of whom she has never met.</p>
+      <p>Her advertisement has run in print for over thirty years, and in that time she has prayed for
+      people in every state in the country &mdash; most of whom she has never met.</p>
 
       <p>She does not have a secretary. She does not have anybody who answers the phone for her. When you
       call Mother Powers, Mother Powers is who picks up &mdash; and if she is with somebody else, she will
@@ -325,6 +321,8 @@ def build_about():
       let time or distance stand in your way.</b></p>
 
       <h3 class="d3" style="margin:2.6rem 0 1rem">What she does</h3>
+      <p>She works with prayer, with candles, and with incense &mdash; frankincense above all, and myrrh
+      beside it, the way it has been done since scripture.</p>
       <p>There is no problem so great that she can&rsquo;t solve. She tells you how to hold on to your job
       when you have failed, and how to succeed. She tells you your troubles and what to do about them. She
       reunites the separated. She gives lucky days and numbers.</p>
@@ -595,12 +593,11 @@ def build_lucky():
 <section class="pad">
   <div class="wrap split wide-left">
     <div class="rv">
-      <p class="dropcap">The dream books sell you a tip sheet. Thirty dollars for six months, forty-five for
-      the year, and the same numbers go out to everybody who bought the book. Mother Powers does not work
-      that way and never has.</p>
+      <p class="dropcap">A printed sheet of numbers is the same sheet mailed to everybody who paid for
+      it. Mother Powers has never worked that way and never will.</p>
       <p>She works your numbers by hand, from your name and your birth date, the way she was taught. Then
       she asks you about your dreams &mdash; because a dream carries numbers with it, and most people
-      throw them away without knowing what they had.</p>
+      throw them away without ever knowing what they had.</p>
       <p>She will give you your lucky days and she will give you the days to keep your money in your
       pocket, which is the half most people never hear. <b class="gold">I also give lucky days and
       numbers.</b></p>
@@ -639,15 +636,13 @@ def build_lucky():
 <section class="pad">
   <div class="wrap narrow center rv">
     <img src="assets/claude-photos/orn-sun.png" alt="" style="max-width:170px;margin:0 auto 1.8rem" loading="lazy">
-    <h2 class="d3">A word about the tip sheets</h2>
+    <h2 class="d3">A word before you spend</h2>
     {rule()}
-    <p style="color:var(--muted)">Mother Powers has nothing against the dream books &mdash; her own
-    advertisement has run in them for years, and she reads them herself. But she wants you to understand
-    what you are buying when you buy a monthly tip sheet: the same sheet, mailed to everybody, for a
-    subscription fee.</p>
-    <p style="color:var(--muted)">Her numbers are yours. She works them from your name, your birth date and
-    your dreams, and she does not give them to anybody else. And she will tell you honestly that no number
-    is a promise. <b class="gold">Play what you can afford to lose, and not one dollar more.</b></p>
+    <p style="color:var(--parchment)">Your numbers are yours. Mother works them from your name, your
+    birth date and your dreams, and she does not hand them to anybody else.</p>
+    <p style="color:var(--parchment)">She will also tell you honestly that no number is a promise. All
+    things are possible through God, and none of them are owed to us.
+    <b class="gold">Play what you can afford to lose, and not one dollar more.</b></p>
   </div>
 </section>
 ''' + footer()
@@ -687,22 +682,22 @@ def build_dreambooks():
        alt="{strip_tags(cap)}" loading="lazy" decoding="async">
   <figcaption><b style="color:var(--gold-lt);display:block;letter-spacing:.1em">{cap}</b>{sub}</figcaption>
 </figure>''' for i, (f, cap, sub) in enumerate(DREAM_BOOKS))
-    return head("The Dream Books", "Mother Powers' own printed advertisements, as they have run in the "
-        "lucky dream books for years.",
+    return head("Her Advertisements", "Mother Powers' own printed advertisements, in print for "
+        "more than thirty years.",
         page="dream-books.html") + banner() + header("dream-books.html") + \
-        page_hero("As seen in<br>the <span class='script gold'>dream books.</span>",
-            "For more than thirty years Mother Powers&rsquo; page has run in the lucky dream books, and "
-            "people have been calling the number on it ever since.",
-            "dreambook-stack", ['<a href="index.html">Home</a>', 'The Dream Books'],
+        page_hero("Thirty years<br><span class='script gold'>in print.</span>",
+            "For more than thirty years Mother Powers&rsquo; page has run in print, and people have "
+            "been calling the number on it ever since.",
+            "dreambook-stack", ['<a href="index.html">Home</a>', 'Her Advertisements'],
             eyebrow="Her own pages") + f'''
 <section class="pad-sm tint">
   <div class="wrap">
     <div class="center rv" style="max-width:620px;margin:0 auto clamp(30px,4vw,46px)">
-      <p class="eyebrow center">Thirty years in print</p>
+      <p class="eyebrow center">Her promise in print</p>
       <h2 class="d2">You may already<br>know her <span class="script gold">page</span></h2>
       {rule()}
-      <p style="color:var(--parchment)">The same promise she has made in print for three decades:
-      come, call, or write &mdash; and the first blessed reading is free.</p>
+      <p style="color:var(--parchment)">The same promise she has made for three decades: God has
+      gifted her to help you &mdash; come, call, or write, and the first blessed reading is free.</p>
     </div>
     <div class="rv">{carousel(HER_ADS, cid="ads2")}</div>
   </div>
@@ -711,36 +706,13 @@ def build_dreambooks():
 <section class="pad">
   <div class="wrap">
     <div class="rv" style="max-width:640px;margin:0 auto clamp(28px,4vw,44px)">
-      <p class="eyebrow">From the books</p>
+      <p class="eyebrow">In print</p>
       <h2 class="d3">Her page, year after year</h2>
       <div class="rule left"><i></i></div>
       <p style="color:var(--parchment)">The advertisements people have been reading &mdash; and
       calling &mdash; for over thirty years.</p>
     </div>
     <div class="gal" data-gallery>{figs}</div>
-  </div>
-</section>
-
-<section class="pad tint-deep">
-  <div class="wrap">
-    <div class="center rv" style="max-width:660px;margin:0 auto clamp(30px,4vw,46px)">
-      <p class="eyebrow center">What the books sell</p>
-      <h2 class="d2">Thirty dollars a sheet.<br>A hundred a <span class="script gold">kit.</span></h2>
-      {rule()}
-      <p style="color:var(--parchment)">These are the catalogue pages Mother&rsquo;s advertisement runs
-      alongside &mdash; tip sheets on subscription, kits at a hundred dollars, oils and lucky hands. People
-      buy them without ever speaking to anybody, and most of them never find out what they actually
-      needed.</p>
-      <p style="color:var(--parchment)"><b class="gold">Call her first.</b> The reading is free, and more
-      often than not she will tell you it is one candle and a prayer said properly.</p>
-    </div>
-    <div class="rv">{carousel(BOOK_PAGES, cid="books")}</div>
-    <p class="small center rv" style="margin-top:2rem;max-width:60ch;margin-left:auto;margin-right:auto">
-      Mother Powers does not sell kits, oils or tip sheets. She reads, she prays, and she tells you
-      the truth about what you need.</p>
-    <div class="btn-row center rv" style="margin-top:2rem">
-      <a class="btn btn-solid btn-lg" href="tel:+1{TEL_MAIN}">{ICON["phone"]} Call Mother First</a>
-    </div>
   </div>
 </section>
 
@@ -879,28 +851,50 @@ def build_category(cat):
 ''' + footer(b)
 
 def build_candles():
+    incense_rows = "".join(f'''<div class="inc-row rv rv-d{i%4+1}">
+      <span class="inc-mark" aria-hidden="true"></span>
+      <div><h3 class="d4">{n}</h3><p class="tiny" style="margin:.35rem 0 .6rem">{use}</p><p>{txt}</p></div>
+    </div>''' for i, (n, use, txt) in enumerate(INCENSE))
     rows = "".join(f'''<div class="swatch rv rv-d{i%5+1}">
       <span class="dot" style="--c:{hexc}"></span>
       <div><h3 class="d4">{n}</h3><p class="tiny" style="margin:.35rem 0 .6rem">{use}</p><p>{txt}</p></div>
     </div>''' for i, (n, hexc, use, txt) in enumerate(CANDLES))
-    return head("Candle Meanings", "What each colour of candle is burned for, in Mother Powers' practice.",
+    return head("Candles &amp; Incense", "What each colour of candle and each incense — frankincense, myrrh, "
+        "sage and hyssop — is burned for in Mother Powers' practice.",
         page="candle-meanings.html") + banner() + header("candle-meanings.html") + \
-        page_hero("What the colours <span class='script gold'>mean</span>",
-            "People ask her this more than almost anything else. Here is how Mother Powers uses them &mdash; "
+        page_hero("Candles, incense<br>&amp; what they <span class='script gold'>mean</span>",
+            "Candles and incense both. People ask her about these more than almost anything else &mdash; "
             "and she will tell you on the telephone which one your situation actually calls for.",
             "prayer-candle", ['<a href="index.html">Home</a>', 'Candle Meanings'],
             eyebrow="Prayer &amp; candle work") + f'''
 <section class="pad">
   <div class="wrap narrow"><div class="swatches">{rows}</div></div>
 </section>
-<section class="pad-sm tint">
+<section class="pad tint">
+  <div class="wrap narrow">
+    <div class="center rv" style="margin-bottom:clamp(30px,4vw,46px)">
+      <p class="eyebrow center">What she burns</p>
+      <h2 class="d2">Frankincense<br>&amp; <span class="script gold">holy smoke</span></h2>
+      {rule()}
+      <p style="color:var(--parchment)">Mother Powers works with incense as much as she works with
+      candles. Frankincense above all &mdash; it was carried to the Lord Himself, and she has never
+      known anything to lift a prayer like it.</p>
+    </div>
+    <div class="incense-list">{incense_rows}</div>
+    <div class="btn-row center" style="margin-top:2.4rem">
+      <a class="btn btn-solid" href="tel:+1{TEL_MAIN}">{ICON["phone"]} Ask Mother What to Burn</a>
+    </div>
+  </div>
+</section>
+
+<section class="pad-sm tint-deep">
   <div class="wrap narrow center rv">
     <img src="assets/claude-photos/orn-flourish.png" alt="" style="max-width:340px;margin:0 auto 1.6rem" loading="lazy">
     <h2 class="d3">A word before you buy candles</h2>
     {rule()}
     <p style="color:var(--parchment)">You do not need an expensive kit. Mother has watched people spend
-    five and six hundred dollars on packages out of the back of a book and get nowhere, because nobody
-    told them what they were for.</p>
+    five and six hundred dollars on packages and get nowhere, because nobody ever told them what they
+    were for or said a prayer over them.</p>
     <p style="color:var(--parchment)">Call her first. She will tell you what your situation calls for, and
     more often than not it is one candle from the grocery store and a prayer said properly.</p>
     <div class="btn-row center" style="margin-top:2rem">

@@ -7,7 +7,7 @@ CATEGORIES = [
  ("money",      "Money &amp; Prosperity",   "cat-money",      "For work that has dried up, money that will not hold, and doors that stay shut."),
  ("luck",       "Luck &amp; Numbers",       "cat-luck",       "Lucky days, lucky numbers, and the turning of a run of bad luck."),
  ("protection", "Protection &amp; Jinx",    "cat-protection", "For conditions that are not natural &mdash; crossed, jinxed, or touched by evil hands."),
- ("cleansing",  "Cleansing &amp; Peace",    "cat-cleansing",  "To clear a home, quiet the nerves, and let a person rest again."),
+ ("cleansing",  "Cleansing &amp; Peace",    "cat-cleansing",  "Frankincense, prayer and hyssop &mdash; to clear a home, quiet the nerves, and let a person rest."),
  ("guidance",   "Reading &amp; Guidance",   "cat-dreams",     "A full sitting: your life, your people, and what is coming."),
 ]
 
@@ -87,7 +87,7 @@ OFFERINGS = [
    "Numbers drawn from your dreams",
    "Written follow-up by mail if you want one"],
   ["Mother Powers is a numerologist. She gives lucky days and numbers, and she has given them for "
-   "a lifetime &mdash; long before she ever put an advertisement in a dream book.",
+   "a lifetime &mdash; long before her page ever went to print.",
    "Tell her your name, your birth date, and any dream you can remember. She works the numbers by hand "
    "the way she was taught, and she will tell you the days that are good for you and the days to keep "
    "your money in your pocket."]),
@@ -122,7 +122,8 @@ OFFERINGS = [
  ("protect-my-family", "Protection for You &amp; Your Loved Ones", "protection", "200",
   "To put a guard over your household and keep you one step ahead of your enemies.",
   "work-protect",
-  ["Protection prayer over each name you give",
+  ["Frankincense burned over the names you give her",
+   "Protection prayer over each name you give",
    "Mother names who means you harm",
    "Your home sealed and blessed",
    "What to watch for, and when"],
@@ -135,7 +136,8 @@ OFFERINGS = [
  ("home-blessing", "Home &amp; Family Blessing", "cleansing", "175",
   "For a house where nobody can rest, and a family that cannot stop fighting.",
   "work-homeblessing",
-  ["A cleansing worked over the address",
+  ["Frankincense and hyssop through every room",
+   "A cleansing worked over the address",
    "What is in the house, and how it got there",
    "A blessing set over every person in it",
    "Simple things for you to do at home"],
@@ -207,7 +209,7 @@ FAQ = [
   "tells you what she sees. If there is work to be done she will tell you what it is and what it would "
   "take, and then it is your decision. Some people only ever call for the prayer, and that is fine."),
  ("Do I have to live in Florida?",
-  "No. Mother works with people in every state, and most of the people she reads for she has never met. "
+  "No. Mother prays for people in every state, and most of those she reads for she has never met. "
   "The work is done by telephone and by prayer, and neither one is stopped by distance."),
  ("How do I pay?",
   "Cash App is easiest &mdash; her handle is $motherpowers. She also takes Apple Pay, and she has taken "
@@ -237,14 +239,9 @@ FAQ = [
 ]
 
 DREAM_BOOKS = [
- ("ad-01", "&ldquo;Change Your Luck Now&rdquo;", "Full-page advertisement &mdash; Mother Powers, Spiritual Healer and Numerologist."),
- ("ad-02", "Spiritual Healer", "&ldquo;I am gifted to help. I specialize in love and breaking-up problems.&rdquo;"),
- ("ad-03", "Spiritual Readings", "&ldquo;Don't consider me just another reader.&rdquo;"),
- ("ad-04", "&ldquo;I do what others claim to do.&rdquo;", "The facing page &mdash; success, love, laughter."),
- ("ad-05", "Reader &amp; Advisor", "&ldquo;God given power of prayer. Don't compare me with any other reader.&rdquo;"),
- ("ad-06", "The Monthly Tip Sheets", "The dream-book pages her advertisement has run alongside for years."),
- ("ad-07", "Blessed Power Kits", "The candles, oils and kits the books sell for hundreds of dollars."),
- ("ad-08", "Lucky Numbers", "The back pages &mdash; where readers go looking for their numbers."),
+ ("ad-01", "&ldquo;Change Your Luck Now&rdquo;", "Spiritual Healer and Numerologist &mdash; her full-page advertisement."),
+ ("ad-03", "&ldquo;God Himself Cannot Come Down&rdquo;", "&ldquo;But He has gifted people such as me to help you.&rdquo;"),
+ ("ad-05", "Reader &amp; Advisor", "&ldquo;God given power of prayer. Don&rsquo;t compare me with any other reader.&rdquo;"),
 ]
 
 
@@ -283,6 +280,21 @@ CANDLES = [
  ("Black",  "#221a2c", "Removal, uncrossing, sending back",
   "Never for harm. Mother burns black to <b>take something off</b> a person &mdash; a jinx, a crossing, "
   "a condition that is not natural. She will tell you plainly if she thinks black is called for."),
+]
+
+INCENSE = [
+ ("Frankincense", "Prayer, blessing, driving out what is not natural",
+  "The oldest of them, and the one Mother reaches for most. Frankincense was carried to the Lord "
+  "Himself, and she burns it when a prayer needs lifting, when a house needs clearing, and over any "
+  "person who has been touched by evil hands. If she tells you to get one thing, it will usually be this."),
+ ("Myrrh", "Grief, protection, sealing the work",
+  "Burned with frankincense, the way it always has been. Mother uses it where there has been a death "
+  "in the family, and to seal work once it is finished so it does not come undone."),
+ ("White sage", "Cleansing a house or a person",
+  "For clearing a room, a doorway, or somebody who has come home carrying something with them."),
+ ("Hyssop", "Washing clean",
+  "&ldquo;Purge me with hyssop, and I shall be clean.&rdquo; Mother uses it in the water when she "
+  "blesses a home."),
 ]
 
 PRAYERS = [

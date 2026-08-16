@@ -3,8 +3,8 @@
 
 TEL_MAIN     = "8502641337"
 TEL_MAIN_FMT = "(850) 264-1337"
-TEL_ALT      = "8503853847"
-TEL_ALT_FMT  = "(850) 385-3847"
+TEL_ALT      = "5735871973"
+TEL_ALT_FMT  = "(573) 587-1973"
 CASHAPP      = "$motherpowers"
 PO_BOX       = "P.O. Box 16159, Tallahassee, FL 32317"
 SITE_NAME    = "Mother Powers"
@@ -15,7 +15,7 @@ TAGLINE      = "Spiritual Healer &amp; Reader"
 NAV_TREE = [
     ("About", "about.html", [
         ("Her Story",         "about.html"),
-        ("The Dream Books",   "dream-books.html"),
+        ("Her Advertisements","dream-books.html"),
         ("Testimonials",      "testimonials.html"),
     ]),
     ("Readings", "readings.html", [
@@ -34,7 +34,7 @@ NAV_TREE = [
     ]),
     ("The Work", "how-it-works.html", [
         ("How It Works",      "how-it-works.html"),
-        ("Candle Meanings",   "candle-meanings.html"),
+        ("Candles &amp; Incense","candle-meanings.html"),
         ("Prayers & Psalms",  "prayers.html"),
         ("Questions",         "faq.html"),
     ]),
