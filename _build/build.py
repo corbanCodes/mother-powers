@@ -274,6 +274,9 @@ def build_home():
 </section>
 
 <section class="pad tint">
+  <div class="incense soft" aria-hidden="true">
+    <i class="smoke s1"></i><i class="smoke s3"></i>
+  </div>
   <div class="wrap">
     <div class="center rv" style="max-width:640px;margin:0 auto clamp(34px,4.5vw,54px)">
       <img src="assets/claude-photos/orn-moonphases.png" alt="" class="orn" style="max-width:300px;margin-bottom:1.8rem" loading="lazy">

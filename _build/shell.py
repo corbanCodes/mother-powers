@@ -180,6 +180,9 @@ def callband(base="", heading=None, sub=None):
                   "she takes her time with you, and the first blessed reading is free.")
     return f'''<section class="callband pad">
   <div class="callband-bg"><img src="{base}assets/claude-photos/prayer-candle.jpg" alt="" loading="lazy" decoding="async"></div>
+  <div class="incense soft" aria-hidden="true">
+    <i class="smoke s1"></i><i class="smoke s3"></i>
+  </div>
   <div class="wrap narrow center">
     <p class="eyebrow center">Call Day or Night</p>
     <h2 class="d2">{heading}</h2>

@@ -441,32 +441,35 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
   background:url("../claude-photos/smoke-plume.png") center bottom / contain no-repeat;
   opacity:0; transform-origin:50% 100%;
   will-change:transform,opacity;
-  animation:plume 17s linear infinite;
+  animation:plume 38s linear infinite;
 }
-.incense .smoke.s1{ left:4%;   animation-duration:17s; animation-delay:0s; }
+.incense .smoke.s1{ left:4%;   animation-duration:38s; animation-delay:-4s; }
 .incense .smoke.s2{
-  left:13%;  animation:plume-flip 26s linear infinite; animation-delay:-11s;
+  left:13%;  animation:plume-flip 52s linear infinite; animation-delay:-26s;
   width:clamp(160px,18vw,290px);
 }
 .incense .smoke.s3{
-  right:8%;  animation-duration:22s; animation-delay:-6s;
+  right:8%;  animation-duration:45s; animation-delay:-17s;
   width:clamp(150px,17vw,260px);
 }
 
 @keyframes plume{
-  0%   { transform:translateY(26%)  translateX(0)     scale(.58)  rotate(-2deg); opacity:0; }
-  14%  { opacity:.55; }
-  45%  { transform:translateY(-18%) translateX(14px)  scale(.88)  rotate(2deg);  opacity:.46; }
-  75%  { transform:translateY(-52%) translateX(-10px) scale(1.16) rotate(-3deg); opacity:.20; }
-  100% { transform:translateY(-82%) translateX(10px)  scale(1.44) rotate(1deg);  opacity:0; }
+  0%   { transform:translateY(30%)  translateX(0)     scale(.56)  rotate(-2deg); opacity:0; }
+  10%  { opacity:.5; }
+  30%  { transform:translateY(2%)   translateX(10px)  scale(.76)  rotate(1deg);  opacity:.56; }
+  55%  { transform:translateY(-24%) translateX(-6px)  scale(.98)  rotate(-2deg); opacity:.5; }
+  78%  { transform:translateY(-50%) translateX(12px)  scale(1.2)  rotate(2deg);  opacity:.3; }
+  92%  { opacity:.12; }
+  100% { transform:translateY(-78%) translateX(4px)   scale(1.42) rotate(0deg);  opacity:0; }
 }
 /* mirrored variant so the two left-hand plumes don't read as the same shape */
 @keyframes plume-flip{
-  0%   { transform:scaleX(-1) translateY(26%)  translateX(0)     scale(.58)  rotate(2deg);  opacity:0; }
-  14%  { opacity:.4; }
-  45%  { transform:scaleX(-1) translateY(-18%) translateX(-12px) scale(.9)   rotate(-2deg); opacity:.3; }
-  75%  { transform:scaleX(-1) translateY(-54%) translateX(8px)   scale(1.2)  rotate(3deg);  opacity:.13; }
-  100% { transform:scaleX(-1) translateY(-84%) translateX(-8px)  scale(1.5)  rotate(-1deg); opacity:0; }
+  0%   { transform:scaleX(-1) translateY(30%)  translateX(0)     scale(.56) rotate(2deg);  opacity:0; }
+  10%  { opacity:.34; }
+  32%  { transform:scaleX(-1) translateY(0)    translateX(-8px)  scale(.8)  rotate(-1deg); opacity:.4; }
+  58%  { transform:scaleX(-1) translateY(-26%) translateX(6px)   scale(1)   rotate(2deg);  opacity:.34; }
+  80%  { transform:scaleX(-1) translateY(-52%) translateX(-10px) scale(1.24) rotate(-3deg); opacity:.2; }
+  100% { transform:scaleX(-1) translateY(-80%) translateX(6px)   scale(1.5) rotate(1deg);  opacity:0; }
 }
 
 /* the coal the smoke lifts from */
@@ -479,9 +482,25 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
 }
 @keyframes embern{ 0%,100%{ opacity:.45; } 45%{ opacity:1; } }
 
+/* quieter drift for mid-page sections */
+.incense.soft .smoke{ opacity:0; }
+.incense.soft .smoke.s1{ left:2%;  animation-duration:56s; animation-delay:-9s; }
+.incense.soft .smoke.s3{ right:3%; animation-duration:64s; animation-delay:-31s; }
+.incense.soft .smoke{ width:clamp(180px,20vw,300px); }
+.incense.soft .smoke.s1,
+.incense.soft .smoke.s3{ animation-name:plume-soft; }
+@keyframes plume-soft{
+  0%   { transform:translateY(24%)  scale(.6)  rotate(-1deg); opacity:0; }
+  14%  { opacity:.24; }
+  45%  { transform:translateY(-8%)  scale(.86) rotate(1deg);  opacity:.26; }
+  76%  { transform:translateY(-42%) scale(1.14) rotate(-2deg); opacity:.14; }
+  100% { transform:translateY(-70%) scale(1.36) rotate(0deg); opacity:0; }
+}
+
 @media (max-width:760px){
   .incense .smoke.s2{ display:none; }
   .incense .smoke{ width:clamp(170px,44vw,260px); }
+  .incense.soft{ display:none; }
 }
 @media (prefers-reduced-motion:reduce){ .incense{ display:none; } }
 
