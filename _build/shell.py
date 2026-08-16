@@ -94,7 +94,7 @@ def head(title, desc, base="", page=""):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{base}assets/css/site.css">
-<link rel="icon" href="{base}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{base}assets/favicon.svg" type="image/svg+xml">
 </head>
 <body data-page="{page}">'''
 
@@ -173,7 +173,7 @@ def callband(base="", heading=None, sub=None):
     sub = sub or ("Pick up the phone and speak with Mother Powers herself. Your call is private, "
                   "she takes her time with you, and the first blessed reading is free.")
     return f'''<section class="callband pad">
-  <div class="callband-bg"><img src="{base}assets/img/prayer-candle.jpg" alt="" loading="lazy" decoding="async"></div>
+  <div class="callband-bg"><img src="{base}assets/claude-photos/prayer-candle.jpg" alt="" loading="lazy" decoding="async"></div>
   <div class="wrap narrow center">
     <p class="eyebrow center">Call Day or Night</p>
     <h2 class="d2">{heading}</h2>

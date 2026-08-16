@@ -33,7 +33,7 @@ def offering_card(o, base="", tag=None):
     price_lbl = "Free of charge" if price == "Free" else f"${price}"
     return f'''<article class="card">
   {tag_html}
-  <div class="card-img"><img src="{base}assets/img/{img}.jpg" alt="{strip_tags(title)}" loading="lazy" decoding="async" width="900" height="675"></div>
+  <div class="card-img"><img src="{base}assets/claude-photos/{img}.jpg" alt="{strip_tags(title)}" loading="lazy" decoding="async" width="900" height="675"></div>
   <div class="card-body">
     <h3>{title}</h3>
     <p>{lead}</p>
@@ -48,7 +48,7 @@ def offering_card(o, base="", tag=None):
 def category_tile(c, base="", delay=0):
     key, name, img, blurb = c
     return f'''<article class="card tile rv rv-d{delay}">
-  <div class="card-img"><img src="{base}assets/img/{img}.jpg" alt="{strip_tags(name)}" loading="lazy" decoding="async" width="900" height="900"></div>
+  <div class="card-img"><img src="{base}assets/claude-photos/{img}.jpg" alt="{strip_tags(name)}" loading="lazy" decoding="async" width="900" height="900"></div>
   <div class="card-body">
     <h3 class="d4">{name}</h3>
     <p>{blurb}</p>
@@ -74,7 +74,7 @@ def acc_block(items):
     return f'<div class="acc" data-acc>{rows}</div>'
 
 def strip_band():
-    items = [("usa","She reads for every state"),("phone","She answers the phone herself"),
+    items = [("usa","Readings by telephone"),("phone","She answers the phone herself"),
              ("moon","Call day or night"),("shield","Your call stays private"),
              ("flame","Prayer &amp; candle work"),("check","First reading free")]
     row = "".join(f'<span class="strip-item">{ICON[i]}{t}</span>' for i, t in items)
@@ -84,7 +84,7 @@ def page_hero(title, sub, img, crumbs, base="", eyebrow=""):
     cr = ' <span>/</span> '.join(crumbs)
     eb = f'<p class="eyebrow">{eyebrow}</p>' if eyebrow else ''
     return f'''<section class="phero">
-  <div class="phero-bg"><img src="{base}assets/img/{img}.jpg" alt="" decoding="async"></div>
+  <div class="phero-bg"><img src="{base}assets/claude-photos/{img}.jpg" alt="" decoding="async"></div>
   <div class="wrap">
     <p class="crumbs">{cr}</p>
     {eb}
@@ -116,8 +116,8 @@ def build_home():
 <section class="hero">
   <div class="hero-bg">
     <picture>
-      <source media="(max-width:700px)" srcset="assets/img/hero-mobile.jpg">
-      <img src="assets/img/hero-altar.jpg" alt="A candlelit altar with prayer candles, an open book of psalms and dried herbs" fetchpriority="high" decoding="async">
+      <source media="(max-width:700px)" srcset="assets/claude-photos/hero-mobile.jpg">
+      <img src="assets/claude-photos/hero-altar.jpg" alt="A candlelit altar with prayer candles, an open book of psalms and dried herbs" fetchpriority="high" decoding="async">
     </picture>
   </div>
   <div class="hero-in">
@@ -131,7 +131,7 @@ def build_home():
         <a class="btn btn-solid btn-lg" href="tel:+1{TEL_MAIN}">{ICON["phone"]} Call {TEL_MAIN_FMT}</a>
         <a class="btn btn-ghost btn-lg" href="readings.html">See the Readings</a>
       </div>
-      <p class="small rv rv-d4 hero-note">Call today &middot; Your first blessed reading is free &middot; She reads for every state</p>
+      <p class="small rv rv-d4 hero-note">Call today &middot; Your first blessed reading is free</p>
     </div>
   </div>
 </section>
@@ -142,7 +142,7 @@ def build_home():
   <div class="wrap">
     <div class="split">
       <div class="rv">
-        <img class="split-img" src="assets/img/about-altar.jpg" alt="An open Bible, a wooden rosary and a burning candle on a dark table"
+        <img class="split-img" src="assets/claude-photos/about-altar.jpg" alt="An open Bible, a wooden rosary and a burning candle on a dark table"
              loading="lazy" decoding="async" width="1024" height="1280">
       </div>
       <div class="rv rv-d2">
@@ -229,7 +229,7 @@ def build_home():
 
 <section class="pad-sm">
   <div class="wrap narrow center rv">
-    <img src="assets/img/orn-moonphases.png" alt="" class="orn" style="max-width:340px;margin-bottom:2rem" loading="lazy">
+    <img src="assets/claude-photos/orn-moonphases.png" alt="" class="orn" style="max-width:340px;margin-bottom:2rem" loading="lazy">
     <p class="eyebrow center">As Seen In The Books</p>
     <h2 class="d3">You may already know her name.</h2>
     <p style="color:var(--muted);max-width:56ch;margin:1.2rem auto 0">Mother Powers has advertised in the
@@ -291,7 +291,7 @@ def build_about():
     </div>
 
     <aside class="rv rv-d2">
-      <img class="split-img" src="assets/img/about-detail.jpg" alt="A handwritten ledger of names and dates beside a candle"
+      <img class="split-img" src="assets/claude-photos/about-detail.jpg" alt="A handwritten ledger of names and dates beside a candle"
            style="margin-bottom:1.6rem" loading="lazy" decoding="async">
       <div class="offer-box">
         <p class="eyebrow">At a glance</p>
@@ -307,7 +307,7 @@ def build_about():
         <a class="btn btn-solid" style="width:100%;margin-top:1.6rem" href="tel:+1{TEL_MAIN}">{ICON["phone"]} {TEL_MAIN_FMT}</a>
         <p class="small center" style="margin-top:.9rem">Or her second line, {TEL_ALT_FMT}</p>
       </div>
-      <img src="assets/img/orn-hand.png" alt="" style="max-width:190px;margin:2.4rem auto 0;opacity:.8" loading="lazy">
+      <img src="assets/claude-photos/orn-hand.png" alt="" style="max-width:190px;margin:2.4rem auto 0;opacity:.8" loading="lazy">
     </aside>
   </div>
 </section>
@@ -380,7 +380,7 @@ def build_offering(o):
     <div class="detail">
       <div class="rv">
         <div class="detail-media">
-          <img src="{b}assets/img/{img}.jpg" alt="{strip_tags(title)}" fetchpriority="high" decoding="async" width="900" height="900">
+          <img src="{b}assets/claude-photos/{img}.jpg" alt="{strip_tags(title)}" fetchpriority="high" decoding="async" width="900" height="900">
         </div>
         <div style="margin-top:clamp(28px,3.5vw,44px)">
           <p class="eyebrow">About this work</p>
@@ -489,7 +489,7 @@ def build_how():
       what the work is. Never through this website.</p>
     </div>
     <div class="grid g3">{pay_cards}</div>
-    <img src="assets/img/orn-key.png" alt="" class="rv" style="max-width:78px;margin:2.6rem auto 0;opacity:.85" loading="lazy">
+    <img src="assets/claude-photos/orn-key.png" alt="" class="rv" style="max-width:78px;margin:2.6rem auto 0;opacity:.85" loading="lazy">
     <p class="small center rv" style="margin-top:1.4rem;max-width:60ch;margin-left:auto;margin-right:auto">
       Mother Powers does not take card details over the telephone and will never ask you for a bank
       account number, a Social Security number, or a gift card. If anyone claiming to be her ever does,
@@ -534,7 +534,7 @@ def build_lucky():
       </div>
     </div>
     <div class="rv rv-d2">
-      <img class="split-img" src="assets/img/cat-luck.jpg" alt="An open dream book, dice and a lucky charm by candlelight"
+      <img class="split-img" src="assets/claude-photos/cat-luck.jpg" alt="An open dream book, dice and a lucky charm by candlelight"
            loading="lazy" decoding="async">
     </div>
   </div>
@@ -562,7 +562,7 @@ def build_lucky():
 
 <section class="pad">
   <div class="wrap narrow center rv">
-    <img src="assets/img/orn-sun.png" alt="" style="max-width:170px;margin:0 auto 1.8rem" loading="lazy">
+    <img src="assets/claude-photos/orn-sun.png" alt="" style="max-width:170px;margin:0 auto 1.8rem" loading="lazy">
     <h2 class="d3">A word about the tip sheets</h2>
     {rule()}
     <p style="color:var(--muted)">Mother Powers has nothing against the dream books &mdash; her own
@@ -640,7 +640,7 @@ def build_faq():
 <section class="pad">
   <div class="wrap narrow">
     <div class="center rv" style="margin-bottom:clamp(28px,4vw,44px)">
-      <img src="assets/img/orn-eye.png" alt="" style="max-width:150px;margin:0 auto" loading="lazy">
+      <img src="assets/claude-photos/orn-eye.png" alt="" style="max-width:150px;margin:0 auto" loading="lazy">
     </div>
     <div class="rv">{acc_block(FAQ)}</div>
   </div>
@@ -697,7 +697,7 @@ def build_contact():
     </div>
 
     <div class="rv" style="margin-top:clamp(34px,4vw,52px);text-align:center">
-      <img src="assets/img/orn-flourish.png" alt="" style="max-width:400px;margin:0 auto 1.6rem" loading="lazy">
+      <img src="assets/claude-photos/orn-flourish.png" alt="" style="max-width:400px;margin:0 auto 1.6rem" loading="lazy">
       <p class="small" style="max-width:62ch;margin:0 auto">She answers her own telephone, day or night.
       Mother Powers keeps no mailing list and does not share, sell or discuss the people who call her.</p>
     </div>
@@ -731,7 +731,7 @@ def build_category(cat):
     return head(plain, strip_tags(blurb), base=b, page=f"readings/{key}.html") + banner() + \
         header(f"readings/{key}.html", b) + f'''
 <section class="phero">
-  <div class="phero-bg"><img src="{b}assets/img/{img}.jpg" alt="" decoding="async"></div>
+  <div class="phero-bg"><img src="{b}assets/claude-photos/{img}.jpg" alt="" decoding="async"></div>
   <div class="wrap">
     <p class="crumbs"><a href="{b}index.html">Home</a> <span>/</span>
        <a href="{b}readings.html">Readings</a> <span>/</span> {plain}</p>
@@ -769,7 +769,7 @@ def build_candles():
 </section>
 <section class="pad-sm tint">
   <div class="wrap narrow center rv">
-    <img src="assets/img/orn-flourish.png" alt="" style="max-width:340px;margin:0 auto 1.6rem" loading="lazy">
+    <img src="assets/claude-photos/orn-flourish.png" alt="" style="max-width:340px;margin:0 auto 1.6rem" loading="lazy">
     <h2 class="d3">A word before you buy candles</h2>
     {rule()}
     <p style="color:var(--parchment)">You do not need an expensive kit. Mother has watched people spend
@@ -874,7 +874,7 @@ def build_numerology():
 </section>
 <section class="pad tint-deep">
   <div class="wrap narrow center rv">
-    <img src="assets/img/orn-moonphases.png" alt="" style="max-width:320px;margin:0 auto 2rem" loading="lazy">
+    <img src="assets/claude-photos/orn-moonphases.png" alt="" style="max-width:320px;margin:0 auto 2rem" loading="lazy">
     <h2 class="d2">She will work yours<br>on the <span class="script gold">telephone</span></h2>
     {rule()}
     <p class="lede">Give her your full name, your birth date, and any dream you can remember. That is all
