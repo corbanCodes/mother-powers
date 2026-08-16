@@ -163,7 +163,9 @@ def build_home():
       <img src="assets/claude-photos/hero-altar.jpg" alt="A candlelit altar with prayer candles, an open book of psalms and dried herbs" fetchpriority="high" decoding="async">
     </picture>
   </div>
-  <div class="incense" aria-hidden="true"><span></span><span></span><span></span><i class="ember"></i></div>
+  <div class="incense" aria-hidden="true">
+    <i class="smoke s1"></i><i class="smoke s2"></i><i class="smoke s3"></i><i class="ember"></i>
+  </div>
   <div class="hero-in">
     <div class="wrap">
       <p class="eyebrow rv">Spiritual Healer &middot; Reader &middot; Numerologist</p>

@@ -115,3 +115,22 @@ the call band and the trust strip. That is her own hook, printed in her own
 advertisement ("For your FREE blessed reading, call Mother Powers"), and it is
 what gets the phone to ring — it is the reason to call, not a product to buy.
 If she wants that gone too it's a two-minute change; just say so.
+
+
+## Hidden, not deleted
+
+Two of her scans (`ad-02`, `ad-04`) print the old 850-385-3847 number. I tried
+retouching it out and it read as obviously doctored on an angled photograph, so
+they are simply not shown. The untouched originals are still in
+`existing-photos(sent)/` if she ever wants them back with the number handled
+properly — the right fix is a clean reprint, not a patch.
+
+The gallery now shows ad-01, ad-03 and ad-05: the live number, or none at all.
+
+## Incense on the home page
+
+First attempt was blurred CSS gradients and it read as a smudge. Replaced with a
+real smoke plate, luminance baked into the alpha channel so the PNG carries its
+own transparency — no `mix-blend-mode`, which was showing the element's box edge
+as a faint rectangle. Three plumes on staggered timings, transform and opacity
+only, and it disables itself under `prefers-reduced-motion`.

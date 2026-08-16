@@ -429,54 +429,61 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
 }
 
 /* ---------- Incense ----------
-   Two slow drifting ribbons of smoke rising from behind the hero copy.
-   Pure CSS, GPU-cheap (transform + opacity only), and it stops dead for
-   anyone who has asked for reduced motion. */
-.incense{
-  position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden;
-}
-.incense span{
-  position:absolute; bottom:-14%; width:clamp(150px,17vw,270px); height:78%;
-  border-radius:50%;
-  background:radial-gradient(ellipse at 50% 100%,
-    rgba(214,196,255,.20) 0%,
-    rgba(178,149,240,.11) 32%,
-    rgba(160,120,240,.05) 58%,
-    transparent 76%);
-  filter:blur(26px);
-  opacity:0;
-  transform-origin:50% 100%;
-  animation:rise 19s ease-in-out infinite;
+   A real smoke plate, screen-blended so the black drops out completely, drifting
+   up from a glowing coal. Two layers at different speeds so it never loops
+   visibly. Transform + opacity only; off entirely for reduced-motion. */
+.incense{ position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
+
+.incense .smoke{
+  position:absolute; bottom:-6%;
+  width:clamp(210px,24vw,380px); aspect-ratio:560/766;
+  /* the plume carries its own alpha, so no blend mode and therefore no box edge */
+  background:url("../claude-photos/smoke-plume.png") center bottom / contain no-repeat;
+  opacity:0; transform-origin:50% 100%;
   will-change:transform,opacity;
+  animation:plume 17s linear infinite;
 }
-.incense span:nth-child(1){ left:11%;  animation-duration:19s; animation-delay:0s; }
-.incense span:nth-child(2){ left:31%;  animation-duration:24s; animation-delay:-8s; opacity:0; }
-.incense span:nth-child(3){ right:16%; animation-duration:22s; animation-delay:-14s; width:clamp(130px,14vw,220px); }
-
-@keyframes rise{
-  0%   { transform:translateY(14%)  translateX(0)     scaleX(.62) scaleY(.72); opacity:0; }
-  18%  { opacity:.55; }
-  50%  { transform:translateY(-30%) translateX(16px)  scaleX(1)   scaleY(1.05); opacity:.42; }
-  78%  { transform:translateY(-62%) translateX(-12px) scaleX(1.3) scaleY(1.28); opacity:.16; }
-  100% { transform:translateY(-88%) translateX(6px)   scaleX(1.6) scaleY(1.45); opacity:0; }
+.incense .smoke.s1{ left:4%;   animation-duration:17s; animation-delay:0s; }
+.incense .smoke.s2{
+  left:13%;  animation:plume-flip 26s linear infinite; animation-delay:-11s;
+  width:clamp(160px,18vw,290px);
+}
+.incense .smoke.s3{
+  right:8%;  animation-duration:22s; animation-delay:-6s;
+  width:clamp(150px,17vw,260px);
 }
 
-/* the ember at the tip of the stick */
+@keyframes plume{
+  0%   { transform:translateY(26%)  translateX(0)     scale(.58)  rotate(-2deg); opacity:0; }
+  14%  { opacity:.55; }
+  45%  { transform:translateY(-18%) translateX(14px)  scale(.88)  rotate(2deg);  opacity:.46; }
+  75%  { transform:translateY(-52%) translateX(-10px) scale(1.16) rotate(-3deg); opacity:.20; }
+  100% { transform:translateY(-82%) translateX(10px)  scale(1.44) rotate(1deg);  opacity:0; }
+}
+/* mirrored variant so the two left-hand plumes don't read as the same shape */
+@keyframes plume-flip{
+  0%   { transform:scaleX(-1) translateY(26%)  translateX(0)     scale(.58)  rotate(2deg);  opacity:0; }
+  14%  { opacity:.4; }
+  45%  { transform:scaleX(-1) translateY(-18%) translateX(-12px) scale(.9)   rotate(-2deg); opacity:.3; }
+  75%  { transform:scaleX(-1) translateY(-54%) translateX(8px)   scale(1.2)  rotate(3deg);  opacity:.13; }
+  100% { transform:scaleX(-1) translateY(-84%) translateX(-8px)  scale(1.5)  rotate(-1deg); opacity:0; }
+}
+
+/* the coal the smoke lifts from */
 .incense .ember{
-  position:absolute; width:5px; height:5px; bottom:9%; left:11%; border-radius:50%;
-  background:radial-gradient(circle,#ffd9a0 0%,#ff9d45 42%,rgba(255,140,50,0) 72%);
-  filter:blur(1px); opacity:.85; animation:embern 4.2s ease-in-out infinite;
-  transform:none;
+  position:absolute; left:calc(5% + clamp(100px,12vw,186px)); bottom:5%;
+  width:7px; height:7px; border-radius:50%;
+  background:radial-gradient(circle,#ffe6bb 0%,#ff9d45 44%,rgba(255,140,50,0) 74%);
+  box-shadow:0 0 16px 4px rgba(255,150,60,.35);
+  animation:embern 4.2s ease-in-out infinite;
 }
-@keyframes embern{ 0%,100%{ opacity:.5; } 45%{ opacity:.95; } }
+@keyframes embern{ 0%,100%{ opacity:.45; } 45%{ opacity:1; } }
 
 @media (max-width:760px){
-  .incense span{ width:clamp(120px,32vw,200px); }
-  .incense span:nth-child(2){ display:none; }
+  .incense .smoke.s2{ display:none; }
+  .incense .smoke{ width:clamp(170px,44vw,260px); }
 }
-@media (prefers-reduced-motion:reduce){
-  .incense{ display:none; }
-}
+@media (prefers-reduced-motion:reduce){ .incense{ display:none; } }
 
 /* ---------- Marquee trust strip ---------- */
 .strip{
