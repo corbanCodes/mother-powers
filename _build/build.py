@@ -200,9 +200,9 @@ def build_home():
         <p class="lede">&ldquo;God himself cannot come down &mdash; but He has gifted people such as me to
         help you, through your time in need, whether it is through love, luck, happiness, sickness,
         marriage, health or business.&rdquo;</p>
-        <p style="color:var(--muted)">Mother Powers has been reading and praying for people for a lifetime.
-        You may have read her advertisement in the dream books, or heard about her from somebody who called
-        her first. She answers her own telephone, she takes her time with you, and she tells you the truth
+        <p style="color:var(--muted)">Mother Powers has been reading and praying for people for a lifetime,
+        and her page has run in the dream books for more than thirty years. You may have read it there, or
+        heard about her from somebody who called her first. She answers her own telephone, she takes her time with you, and she tells you the truth
         even when the truth is that there is nothing wrong.</p>
         <p style="color:var(--muted)">And I promise that my work is through God. If you are suffering, sick,
         or worried, I want to hear from you. God did not put you here to suffer &mdash; He put you here for
@@ -279,12 +279,12 @@ def build_home():
   <div class="wrap">
     <div class="center rv" style="max-width:640px;margin:0 auto clamp(34px,4.5vw,54px)">
       <img src="assets/claude-photos/orn-moonphases.png" alt="" class="orn" style="max-width:300px;margin-bottom:1.8rem" loading="lazy">
-      <p class="eyebrow center">As seen in the books</p>
+      <p class="eyebrow center">Thirty years in the books</p>
       <h2 class="d2">You may already<br>know her <span class="script gold">name</span></h2>
       {rule()}
-      <p style="color:var(--parchment)">Mother Powers has advertised in the lucky dream books for years.
-      A great many of the people who call her had been reading her page a long time before they ever
-      picked up the telephone.</p>
+      <p style="color:var(--parchment)">Mother Powers&rsquo; page has run in the lucky dream books for
+      more than thirty years. A great many of the people who call her had been reading it a long time
+      before they ever picked up the telephone.</p>
     </div>
     <div class="rv">{carousel(POSTERS, cid="posters")}</div>
     <div class="btn-row center rv" style="margin-top:clamp(28px,3.5vw,42px)">
@@ -311,6 +311,9 @@ def build_about():
       She was born gifted, and upon reaching womanhood and realizing she had the God-given power to heal,
       she devoted a lifetime to this work. She is a spiritual healer, a reader and advisor, and a
       numerologist, and she works out of the privacy of her own home in Tallahassee, Florida.</p>
+
+      <p>Her advertisement has run in the lucky dream books for over thirty years, and in that time she
+      has read for people in every state in the country &mdash; most of whom she has never met.</p>
 
       <p>She does not have a secretary. She does not have anybody who answers the phone for her. When you
       call Mother Powers, Mother Powers is who picks up &mdash; and if she is with somebody else, she will
@@ -556,7 +559,7 @@ def build_how():
       <h2 class="d2">How people <span class="script gold">pay</span></h2>
       {rule()}
       <p style="color:var(--muted)">Always after the reading, and always after Mother has told you exactly
-      what the work is. Never through this website.</p>
+      what the work is.</p>
     </div>
     <div class="grid g3">{pay_cards}</div>
     <img src="assets/claude-photos/orn-key.png" alt="" class="rv" style="max-width:78px;margin:2.6rem auto 0;opacity:.85" loading="lazy">
@@ -688,18 +691,18 @@ def build_dreambooks():
         "lucky dream books for years.",
         page="dream-books.html") + banner() + header("dream-books.html") + \
         page_hero("As seen in<br>the <span class='script gold'>dream books.</span>",
-            "These are Mother Powers' own advertisements, photographed from the books they run in. Tap any "
-            "page to read it full size. The words on this website are hers &mdash; they came off these pages.",
+            "For more than thirty years Mother Powers&rsquo; page has run in the lucky dream books, and "
+            "people have been calling the number on it ever since.",
             "dreambook-stack", ['<a href="index.html">Home</a>', 'The Dream Books'],
             eyebrow="Her own pages") + f'''
 <section class="pad-sm tint">
   <div class="wrap">
     <div class="center rv" style="max-width:620px;margin:0 auto clamp(30px,4vw,46px)">
-      <p class="eyebrow center">Her pages, redrawn</p>
-      <h2 class="d2">The same words,<br><span class="script gold">set clean</span></h2>
+      <p class="eyebrow center">Thirty years in print</p>
+      <h2 class="d2">You may already<br>know her <span class="script gold">page</span></h2>
       {rule()}
-      <p style="color:var(--parchment)">Her advertisement has run in these books for years in whatever
-      type the printer had. This is the same copy, word for word, set properly.</p>
+      <p style="color:var(--parchment)">The same promise she has made in print for three decades:
+      come, call, or write &mdash; and the first blessed reading is free.</p>
     </div>
     <div class="rv">{carousel(HER_ADS, cid="ads2")}</div>
   </div>
@@ -708,10 +711,11 @@ def build_dreambooks():
 <section class="pad">
   <div class="wrap">
     <div class="rv" style="max-width:640px;margin:0 auto clamp(28px,4vw,44px)">
-      <p class="eyebrow">The originals</p>
-      <h2 class="d3">Photographed from the books</h2>
+      <p class="eyebrow">From the books</p>
+      <h2 class="d3">Her page, year after year</h2>
       <div class="rule left"><i></i></div>
-      <p style="color:var(--parchment)">Tap any page to read it full size.</p>
+      <p style="color:var(--parchment)">The advertisements people have been reading &mdash; and
+      calling &mdash; for over thirty years.</p>
     </div>
     <div class="gal" data-gallery>{figs}</div>
   </div>
@@ -732,8 +736,8 @@ def build_dreambooks():
     </div>
     <div class="rv">{carousel(BOOK_PAGES, cid="books")}</div>
     <p class="small center rv" style="margin-top:2rem;max-width:60ch;margin-left:auto;margin-right:auto">
-      Shown for reference. These products and prices belong to the dream-book publishers, not to
-      Mother Powers, and she does not sell them.</p>
+      Mother Powers does not sell kits, oils or tip sheets. She reads, she prays, and she tells you
+      the truth about what you need.</p>
     <div class="btn-row center rv" style="margin-top:2rem">
       <a class="btn btn-solid btn-lg" href="tel:+1{TEL_MAIN}">{ICON["phone"]} Call Mother First</a>
     </div>
@@ -804,7 +808,7 @@ def build_contact():
         <p class="eyebrow">To send an offering</p>
         <p class="d4" style="font-family:var(--serif);color:var(--gold-lt);line-height:1.4">Cash App<br>{CASHAPP}</p>
         <p class="small" style="margin-top:.9rem">Apple Pay and money orders also welcome. Always after the
-        reading, never before, and never through this website.</p>
+        reading, and never before.</p>
       </div>
       <div class="offer-box rv rv-d3">
         <p class="eyebrow">Where she reads</p>
@@ -835,9 +839,7 @@ def build_legal(slug, title, sub, blocks):
     return head(title, sub, page=slug) + banner() + header(slug) + \
         page_hero(title, sub, "velvet-texture", ['<a href="index.html">Home</a>', title],
                   eyebrow="Please read") + f'''
-<section class="pad"><div class="wrap narrow rv"><p class="small">Last updated: this is a preview site.
-These terms are a starting draft prepared by 60 Minute Sites and should be reviewed before the site goes
-live.</p>{body}</div></section>
+<section class="pad"><div class="wrap narrow rv">{body}</div></section>
 ''' + footer()
 
 
@@ -953,9 +955,9 @@ def build_dreamdict():
             eyebrow="Tell her the dream") + f'''
 <section class="pad">
   <div class="wrap narrow">
-    <p class="small rv" style="margin-bottom:clamp(24px,3vw,38px)">Tap any sign to read it. These are
-    general meanings &mdash; the same dream means different things to different people, which is exactly
-    why Mother wants to hear yours in your own words.</p>
+    <p class="small rv" style="margin-bottom:clamp(24px,3vw,38px)">These are the general meanings.
+    The same dream means different things to different people, which is why Mother would rather hear
+    yours in your own words.</p>
     <div class="acc dreamdict rv" data-acc>{rows}</div>
     <div class="btn-row center" style="margin-top:clamp(34px,4vw,50px)">
       <a class="btn btn-solid btn-lg" href="tel:+1{TEL_MAIN}">{ICON["phone"]} Tell Mother Your Dream</a>
@@ -1042,7 +1044,7 @@ def main():
          "when you call back. She does not enter it into any database, she does not sell it, and she does "
          "not discuss one caller with another.</p><p>She does not keep a mailing list and she does not "
          "send e-mail.</p>"),
-        ("Cookies and analytics", "<p>This preview site sets no cookies and runs no analytics or "
+        ("Cookies and analytics", "<p>This site sets no cookies and runs no analytics or "
          "advertising trackers. Fonts are loaded from Google Fonts, which will see your IP address as part "
          "of serving the font files.</p>"),
         ("Your phone carrier", "<p>Calls travel over the ordinary telephone network. Mother Powers has no "
@@ -1063,7 +1065,7 @@ def main():
         ("No guarantee", "<p>No specific outcome is promised or guaranteed, and Mother Powers will tell "
          "you plainly to be careful of anybody who does promise one. Individual experiences vary.</p>"),
         ("Offerings and refunds", "<p>Offerings are discussed and agreed on the telephone before anything "
-         "is sent, and never collected through this website. Once spiritual work has been performed it "
+         "is sent. Once spiritual work has been performed it "
          "cannot be undone, and offerings for completed work are not refundable. If you are unhappy, call "
          f"her &mdash; <a class='gold' href='tel:+1{TEL_MAIN}'>{TEL_MAIN_FMT}</a>. She would rather hear it "
          "from you than not.</p>"),

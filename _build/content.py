@@ -212,7 +212,7 @@ FAQ = [
  ("How do I pay?",
   "Cash App is easiest &mdash; her handle is $motherpowers. She also takes Apple Pay, and she has taken "
   "money orders her whole life if that is what you are comfortable with. She will tell you on the "
-  "telephone. There is nothing to enter on this website."),
+  "telephone."),
  ("Will anybody know that I called?",
   "No. Mother does not keep a mailing list, she does not send e-mail, and she does not discuss one "
   "caller with another. A great many people say it is like going to a psychiatrist &mdash; it stays "
