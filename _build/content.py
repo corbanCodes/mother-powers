@@ -13,20 +13,6 @@ CATEGORIES = [
 
 # slug, title, cat, price, lead-in, image, bullets, long-copy paragraphs
 OFFERINGS = [
- ("blessed-reading", "The Free Blessed Reading", "guidance", "Free",
-  "Your first call. Mother prays with you, listens, and tells you plainly what she sees.",
-  "prayer-candle",
-  ["A prayer said over you by name",
-   "What Mother sees around your situation right now",
-   "Whether the trouble is natural or not natural",
-   "What she would do next, and what it would take"],
-  ["Every person who calls Mother Powers gets a blessed reading at no charge. There is nothing to buy "
-   "first and nothing to sign up for. You call, you tell her what is on your heart, and she prays.",
-   "Most people have never had anybody just listen. Mother will. Some callers only ever want the prayer "
-   "and the conversation, and that is fine &mdash; she has sat on the phone with people for an hour and "
-   "taken nothing. If there is work to be done, she will tell you what it is and what it costs, and you "
-   "can decide in your own time."]),
-
  ("reunite-the-separated", "Reunite the Separated", "love", "150",
   "For the marriage or the love that has broken apart and needs bringing back together.",
   "cat-love",

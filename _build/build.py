@@ -127,7 +127,6 @@ POSTERS = [
  ("assets/clean-image-gen/08-turn-your-luck-around.jpg", "Turn Your Luck Around",  "Bad luck &middot; Blocked roads &middot; Money worries"),
  ("assets/clean-image-gen/05-power-of-prayer.jpg",       "God-Given Power of Prayer", "Your first blessed reading is free"),
  ("assets/clean-image-gen/04-call-day-or-night.jpg",     "Call Day or Night",      "&ldquo;I answer my own telephone&rdquo;"),
- ("assets/clean-image-gen/06-lucky-numbers.jpg",         "Lucky Numbers",          "Lucky days &middot; Dream signs &middot; Personal numbers"),
 ]
 
 HER_ADS = [

@@ -103,3 +103,15 @@ not hers — their products, their prices, their 1-800 number. They're used on
 `dream-books.html` only to make the price-contrast argument, and the caption
 says plainly that they are not hers and she does not sell them. Don't move
 them anywhere that reads as her own product list.
+
+
+## The free reading
+
+The $0 "Free Blessed Reading" card and its page are gone — a zero-dollar item
+sitting in a cart works against her, so every card now carries a price.
+
+What I did keep is the *line* "your first blessed reading is free," in the hero,
+the call band and the trust strip. That is her own hook, printed in her own
+advertisement ("For your FREE blessed reading, call Mother Powers"), and it is
+what gets the phone to ring — it is the reason to call, not a product to buy.
+If she wants that gone too it's a two-minute change; just say so.

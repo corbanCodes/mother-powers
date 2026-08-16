@@ -4,11 +4,24 @@
   var doc = document, body = doc.body;
 
   /* ---- Preview banner: dismiss for the session ---- */
+  var bannerEl = doc.querySelector('.demo-banner');
+  function sizeBanner() {
+    if (!bannerEl) return;
+    var h = body.classList.contains('banner-hidden') ? 0 : bannerEl.offsetHeight;
+    doc.documentElement.style.setProperty('--banner-h', h + 'px');
+  }
+  sizeBanner();
+  window.addEventListener('resize', sizeBanner, { passive: true });
+  if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(sizeBanner);
+
   var bannerBtn = doc.querySelector('[data-banner-close]');
   if (bannerBtn) {
-    try { if (sessionStorage.getItem('mp-banner') === 'off') body.classList.add('banner-hidden'); } catch (e) {}
+    try {
+      if (sessionStorage.getItem('mp-banner') === 'off') { body.classList.add('banner-hidden'); sizeBanner(); }
+    } catch (e) {}
     bannerBtn.addEventListener('click', function () {
       body.classList.add('banner-hidden');
+      sizeBanner();
       try { sessionStorage.setItem('mp-banner', 'off'); } catch (e) {}
     });
   }
