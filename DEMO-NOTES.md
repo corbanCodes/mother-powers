@@ -75,3 +75,31 @@ true transparent PNGs.
 3. **She has no Instagram.** `@customspellwork` was the account you looked at,
    not hers. The dream-book gallery is enough social proof to start; Instagram
    is a later conversation and it's work she'd have to do herself.
+
+## The cart
+
+She said no forms and no online payment, so the cart is a cart right up until
+checkout — and then checkout is a phone call. Add to cart, see a running total,
+open the panel, and the checkout button dials her.
+
+It's `localStorage` only. Nothing is transmitted, there is no backend, and no
+card details are collected anywhere. Worth demoing live on the call — it lets a
+browser gather what they want and then read it to her, which is closer to how
+she already works than a form ever would be.
+
+## Image sets
+
+Three sets are in the repo so they can be compared:
+
+- `assets/clean-image-gen/` — the ChatGPT posters. Best of the three and the
+  closest match to the site palette. These are placed on home, readings,
+  about, lucky-numbers, contact and how-it-works.
+- `assets/web-gen/` — the earlier ChatGPT ads (gold). On `dream-books.html`.
+- `assets/claude-photos/` — my API still lifes and ornaments. Still doing the
+  work everywhere else; they weren't replaced.
+
+One caution: `web-gen/catalog-*.jpg` are Double Red Lucky's catalogue pages,
+not hers — their products, their prices, their 1-800 number. They're used on
+`dream-books.html` only to make the price-contrast argument, and the caption
+says plainly that they are not hers and she does not sell them. Don't move
+them anywhere that reads as her own product list.

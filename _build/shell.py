@@ -57,6 +57,9 @@ ICON = {
  "shield":'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
  "moon":  '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>',
  "flame": '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2s5 5.2 5 9.5a5 5 0 0 1-10 0C7 9 9 6.5 9 6.5S10 9 11 9c1.2 0 1-4.5 1-7z"/></svg>',
+ "cart":  '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.6l2.2 11.2a1.7 1.7 0 0 0 1.7 1.3h8.4a1.7 1.7 0 0 0 1.7-1.3L21 7H6"/></svg>',
+ "plus":  '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
+ "trash": '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg>',
  "usa":   '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 4 6 4 9.5s-1.4 6.7-4 9.5c-2.6-2.8-4-6-4-9.5s1.4-6.7 4-9.5z"/></svg>',
 }
 
@@ -154,6 +157,9 @@ def header(page, base=""):
         <span class="l">Call Mother</span><span class="n">{TEL_MAIN_FMT}</span>
       </a>
       <a class="btn btn-solid btn-sm" href="tel:+1{TEL_MAIN}">{ICON["phone"]} Call Now</a>
+      <button class="cart-btn" type="button" aria-label="Cart" data-cart-open>
+        {ICON["cart"]}<span class="cart-count" data-cart-count hidden>0</span>
+      </button>
       <button class="burger" type="button" aria-label="Menu" aria-expanded="false" data-menu>
         <span></span><span></span><span></span>
       </button>
@@ -239,8 +245,33 @@ def footer(base=""):
 </footer>
 <div class="callbar">
   <a class="a1" href="tel:+1{TEL_MAIN}">{ICON["phone"]} Call Mother Now</a>
-  <a class="a2" href="{base}readings.html">The Readings</a>
+  <button class="a2" type="button" data-cart-open>{ICON["cart"]} <span data-cart-count-m>Cart</span></button>
 </div>
+
+<!-- Cart. Checkout is a phone call, by design — she asked for no online payment. -->
+<div class="cart-scrim" data-cart-scrim hidden></div>
+<aside class="cart-panel" data-cart-panel aria-hidden="true" aria-label="Cart">
+  <div class="cart-head">
+    <div>
+      <p class="eyebrow" style="margin:0 0 .3rem">Your cart</p>
+      <h2 class="d4" style="font-size:1.35rem">Ready to check out</h2>
+    </div>
+    <button class="cart-x" type="button" aria-label="Close" data-cart-close>&times;</button>
+  </div>
+  <div class="cart-body" data-cart-body></div>
+  <div class="cart-foot" data-cart-foot hidden>
+    <div class="cart-total"><span>Total</span><b data-cart-total>$0</b></div>
+    <div class="checkout-note">
+      <p class="eyebrow" style="margin:0 0 .5rem">To check out</p>
+      <p style="margin:0">Call Mother Powers and tell her what is in your cart. She takes it from
+      there &mdash; and she will tell you if you need less than you put in.</p>
+    </div>
+    <a class="btn btn-solid btn-lg cart-go" style="width:100%;margin-top:1rem" href="tel:+1{TEL_MAIN}">
+      {ICON["phone"]}<span>Check Out<b>{TEL_MAIN_FMT}</b></span></a>
+    <button class="cart-clear" type="button" data-cart-clear>Empty the cart</button>
+  </div>
+</aside>
+<div class="toast" data-toast aria-live="polite"></div>
 <script src="{base}assets/js/site.js"></script>
 </body>
 </html>'''

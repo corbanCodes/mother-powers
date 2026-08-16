@@ -39,7 +39,11 @@ def offering_card(o, base="", tag=None):
     <p>{lead}</p>
     <div class="card-foot">
       <span class="card-price">{price_lbl}<small>Offering</small></span>
-      <span class="card-go">Read More {ICON["arrow"]}</span>
+      <button class="add-btn" type="button" data-add data-id="{slug}"
+              data-title="{strip_tags(title)}" data-price="{'' if price == 'Free' else price}"
+              data-img="{base}assets/claude-photos/{img}.jpg">
+        {ICON["plus"]}<span class="add-lbl">Add to cart</span>
+      </button>
     </div>
   </div>
   <a class="stretch" href="{base}readings/{slug}.html" aria-label="{strip_tags(title)}"></a>
@@ -93,6 +97,51 @@ def page_hero(title, sub, img, crumbs, base="", eyebrow=""):
     <p class="lede" style="max-width:60ch">{sub}</p>
   </div>
 </section>'''
+
+
+def carousel(slides, base="", wide=False, cid="c"):
+    """slides: list of (img_path, caption_title, caption_sub)"""
+    w = " wide" if wide else ""
+    items = "".join(f'''<div class="carousel-slide{w}">
+      <figure class="carousel-fig"><img src="{base}{src}" alt="{strip_tags(t)}" loading="lazy" decoding="async"></figure>
+      <figcaption class="carousel-cap"><b>{t}</b>{sub}</figcaption>
+    </div>''' for src, t, sub in slides)
+    return f'''<div class="carousel" data-carousel id="{cid}">
+  <div class="carousel-track" aria-label="Gallery">{items}</div>
+  <div class="carousel-nav">
+    <button class="car-btn" type="button" data-car-prev aria-label="Previous">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="car-dots"></div>
+    <button class="car-btn" type="button" data-car-next aria-label="Next">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+</div>'''
+
+POSTERS = [
+ ("assets/clean-image-gen/01-change-your-luck.jpg",      "Change Your Luck Now",   "Love &middot; Luck &middot; Marriage &middot; Money &middot; Protection"),
+ ("assets/clean-image-gen/02-gifted-to-help.jpg",        "I Am Gifted To Help",    "Spiritual healer, reader &amp; advisor"),
+ ("assets/clean-image-gen/03-spiritual-readings.jpg",    "Spiritual Readings",     "&ldquo;Peace of mind begins with one call&rdquo;"),
+ ("assets/clean-image-gen/07-the-work.jpg",              "The Work",               "Prayer and guidance for the road ahead"),
+ ("assets/clean-image-gen/08-turn-your-luck-around.jpg", "Turn Your Luck Around",  "Bad luck &middot; Blocked roads &middot; Money worries"),
+ ("assets/clean-image-gen/05-power-of-prayer.jpg",       "God-Given Power of Prayer", "Your first blessed reading is free"),
+ ("assets/clean-image-gen/04-call-day-or-night.jpg",     "Call Day or Night",      "&ldquo;I answer my own telephone&rdquo;"),
+ ("assets/clean-image-gen/06-lucky-numbers.jpg",         "Lucky Numbers",          "Lucky days &middot; Dream signs &middot; Personal numbers"),
+]
+
+HER_ADS = [
+ ("assets/web-gen/ad-change-your-luck.jpg",     "Change Your Luck Now",  "Spiritual healer &amp; numerologist"),
+ ("assets/web-gen/ad-spiritual-readings.jpg",   "Spiritual Readings",    "&ldquo;Don&rsquo;t consider me just another reader&rdquo;"),
+ ("assets/web-gen/ad-power-of-prayer.jpg",      "God Given Power of Prayer", "Reader &amp; advisor"),
+ ("assets/web-gen/ad-success-love-laughter.jpg","Success, Love, Laughter", "&ldquo;I do what others claim to do&rdquo;"),
+]
+
+BOOK_PAGES = [
+ ("assets/web-gen/catalog-tip-sheets.jpg",     "Monthly Tip Sheets",     "$30 for six months, $45 for the year"),
+ ("assets/web-gen/catalog-kits-mojo-bags.jpg", "Blessed Kits &amp; Mojo Bags", "$100 a kit, and up"),
+ ("assets/web-gen/catalog-monkey-paw.jpg",     "Lucky Hand &amp; Oils",  "$7.98 to $79.95"),
+]
 
 # ---------------------------------------------------------------- pages
 def build_home():
@@ -227,17 +276,20 @@ def build_home():
   </div>
 </section>
 
-<section class="pad-sm">
-  <div class="wrap narrow center rv">
-    <img src="assets/claude-photos/orn-moonphases.png" alt="" class="orn" style="max-width:340px;margin-bottom:2rem" loading="lazy">
-    <p class="eyebrow center">As Seen In The Books</p>
-    <h2 class="d3">You may already know her name.</h2>
-    <p style="color:var(--muted);max-width:56ch;margin:1.2rem auto 0">Mother Powers has advertised in the
-    lucky dream books for years &mdash; the same books people have been buying for their numbers,
-    their candles and their kits. Many of the people who call her have been reading her page for a long
-    time before they ever picked up the phone.</p>
-    <div class="btn-row center" style="margin-top:2rem">
-      <a class="btn btn-ghost" href="dream-books.html">See Her Advertisements</a>
+<section class="pad tint">
+  <div class="wrap">
+    <div class="center rv" style="max-width:640px;margin:0 auto clamp(34px,4.5vw,54px)">
+      <img src="assets/claude-photos/orn-moonphases.png" alt="" class="orn" style="max-width:300px;margin-bottom:1.8rem" loading="lazy">
+      <p class="eyebrow center">As seen in the books</p>
+      <h2 class="d2">You may already<br>know her <span class="script gold">name</span></h2>
+      {rule()}
+      <p style="color:var(--parchment)">Mother Powers has advertised in the lucky dream books for years.
+      A great many of the people who call her had been reading her page a long time before they ever
+      picked up the telephone.</p>
+    </div>
+    <div class="rv">{carousel(POSTERS, cid="posters")}</div>
+    <div class="btn-row center rv" style="margin-top:clamp(28px,3.5vw,42px)">
+      <a class="btn btn-ghost" href="dream-books.html">See the Original Pages</a>
     </div>
   </div>
 </section>
@@ -312,6 +364,16 @@ def build_about():
   </div>
 </section>
 
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="split top rv">
+      <img class="split-img" src="assets/clean-image-gen/05-power-of-prayer.jpg"
+           alt="Mother Powers — God-given power of prayer" loading="lazy" decoding="async">
+      <img class="split-img" src="assets/clean-image-gen/02-gifted-to-help.jpg"
+           alt="Mother Powers — I am gifted to help" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
 <section class="pad tint-deep">
   <div class="wrap narrow center rv">
     <p class="eyebrow center">Her words, from the books</p>
@@ -354,6 +416,9 @@ def build_readings():
 <div class="wrap" style="padding-top:clamp(28px,4vw,44px)">
   <div class="btn-row rv" style="gap:10px">{jump}</div>
 </div>
+<section class="pad-sm">
+  <div class="wrap"><div class="rv">{carousel(POSTERS[:5], cid="rposters")}</div></div>
+</section>
 {sections}
 ''' + footer()
 
@@ -401,6 +466,12 @@ def build_offering(o):
           <p class="small" style="margin-top:.9rem">{pay}</p>
           <a class="btn btn-solid btn-lg" style="width:100%;margin-top:1.6rem" href="tel:+1{TEL_MAIN}">
             {ICON["phone"]} Call to Begin &mdash; {TEL_MAIN_FMT}</a>
+          <button class="btn btn-ghost" style="width:100%;margin-top:.7rem" type="button" data-add
+                  data-id="{slug}" data-title="{strip_tags(title)}"
+                  data-price="{'' if price == 'Free' else price}"
+                  data-img="{b}assets/claude-photos/{img}.jpg">
+            {ICON["plus"]}<span class="add-lbl">Add to cart</span>
+          </button>
           <a class="btn btn-ghost" style="width:100%;margin-top:.7rem" href="{b}how-it-works.html">How Payment Works</a>
           <dl class="spec" style="margin-top:1.9rem">
             <div><dt>How it is done</dt><dd>By telephone</dd></div>
@@ -498,6 +569,9 @@ def build_how():
 </section>
 
 <section class="pad-sm">
+  <div class="wrap"><div class="rv">{carousel(POSTERS[3:], cid="hposters")}</div></div>
+</section>
+<section class="pad-sm">
   <div class="wrap narrow rv">
     <h2 class="d3 center">Common questions</h2>
     {rule()}
@@ -534,8 +608,8 @@ def build_lucky():
       </div>
     </div>
     <div class="rv rv-d2">
-      <img class="split-img" src="assets/claude-photos/cat-luck.jpg" alt="An open dream book, dice and a lucky charm by candlelight"
-           loading="lazy" decoding="async">
+      <img class="split-img" src="assets/clean-image-gen/06-lucky-numbers.jpg"
+           alt="Mother Powers — lucky numbers, lucky days and dream signs" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -619,9 +693,54 @@ def build_dreambooks():
             "page to read it full size. The words on this website are hers &mdash; they came off these pages.",
             "dreambook-stack", ['<a href="index.html">Home</a>', 'The Dream Books'],
             eyebrow="Her own pages") + f'''
-<section class="pad">
-  <div class="wrap"><div class="gal" data-gallery>{figs}</div></div>
+<section class="pad-sm tint">
+  <div class="wrap">
+    <div class="center rv" style="max-width:620px;margin:0 auto clamp(30px,4vw,46px)">
+      <p class="eyebrow center">Her pages, redrawn</p>
+      <h2 class="d2">The same words,<br><span class="script gold">set clean</span></h2>
+      {rule()}
+      <p style="color:var(--parchment)">Her advertisement has run in these books for years in whatever
+      type the printer had. This is the same copy, word for word, set properly.</p>
+    </div>
+    <div class="rv">{carousel(HER_ADS, cid="ads2")}</div>
+  </div>
 </section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="rv" style="max-width:640px;margin:0 auto clamp(28px,4vw,44px)">
+      <p class="eyebrow">The originals</p>
+      <h2 class="d3">Photographed from the books</h2>
+      <div class="rule left"><i></i></div>
+      <p style="color:var(--parchment)">Tap any page to read it full size.</p>
+    </div>
+    <div class="gal" data-gallery>{figs}</div>
+  </div>
+</section>
+
+<section class="pad tint-deep">
+  <div class="wrap">
+    <div class="center rv" style="max-width:660px;margin:0 auto clamp(30px,4vw,46px)">
+      <p class="eyebrow center">What the books sell</p>
+      <h2 class="d2">Thirty dollars a sheet.<br>A hundred a <span class="script gold">kit.</span></h2>
+      {rule()}
+      <p style="color:var(--parchment)">These are the catalogue pages Mother&rsquo;s advertisement runs
+      alongside &mdash; tip sheets on subscription, kits at a hundred dollars, oils and lucky hands. People
+      buy them without ever speaking to anybody, and most of them never find out what they actually
+      needed.</p>
+      <p style="color:var(--parchment)"><b class="gold">Call her first.</b> The reading is free, and more
+      often than not she will tell you it is one candle and a prayer said properly.</p>
+    </div>
+    <div class="rv">{carousel(BOOK_PAGES, cid="books")}</div>
+    <p class="small center rv" style="margin-top:2rem;max-width:60ch;margin-left:auto;margin-right:auto">
+      Shown for reference. These products and prices belong to the dream-book publishers, not to
+      Mother Powers, and she does not sell them.</p>
+    <div class="btn-row center rv" style="margin-top:2rem">
+      <a class="btn btn-solid btn-lg" href="tel:+1{TEL_MAIN}">{ICON["phone"]} Call Mother First</a>
+    </div>
+  </div>
+</section>
+
 <div class="lightbox" data-lightbox aria-hidden="true">
   <button class="close" type="button" aria-label="Close">&times;</button>
   <button class="nav-b prev" type="button" aria-label="Previous">&lsaquo;</button>
@@ -696,6 +815,12 @@ def build_contact():
       </div>
     </div>
 
+    <div class="rv" style="margin-top:clamp(30px,4vw,46px);display:flex;justify-content:center">
+      <img src="assets/clean-image-gen/04-call-day-or-night.jpg"
+           alt="Mother Powers — call day or night, she answers her own telephone"
+           style="max-width:420px;width:100%;border:1px solid var(--line-soft);border-radius:2px"
+           loading="lazy" decoding="async">
+    </div>
     <div class="rv" style="margin-top:clamp(34px,4vw,52px);text-align:center">
       <img src="assets/claude-photos/orn-flourish.png" alt="" style="max-width:400px;margin:0 auto 1.6rem" loading="lazy">
       <p class="small" style="max-width:62ch;margin:0 auto">She answers her own telephone, day or night.

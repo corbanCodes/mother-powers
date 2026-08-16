@@ -43,6 +43,9 @@
         <span class="l">Call Mother</span><span class="n">(850) 264-1337</span>
       </a>
       <a class="btn btn-solid btn-sm" href="tel:+18502641337"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Call Now</a>
+      <button class="cart-btn" type="button" aria-label="Cart" data-cart-open>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.6l2.2 11.2a1.7 1.7 0 0 0 1.7 1.3h8.4a1.7 1.7 0 0 0 1.7-1.3L21 7H6"/></svg><span class="cart-count" data-cart-count hidden>0</span>
+      </button>
       <button class="burger" type="button" aria-label="Menu" aria-expanded="false" data-menu>
         <span></span><span></span><span></span>
       </button>
@@ -65,8 +68,51 @@
     <p class="lede" style="max-width:60ch">These are Mother Powers' own advertisements, photographed from the books they run in. Tap any page to read it full size. The words on this website are hers &mdash; they came off these pages.</p>
   </div>
 </section>
+<section class="pad-sm tint">
+  <div class="wrap">
+    <div class="center rv" style="max-width:620px;margin:0 auto clamp(30px,4vw,46px)">
+      <p class="eyebrow center">Her pages, redrawn</p>
+      <h2 class="d2">The same words,<br><span class="script gold">set clean</span></h2>
+      <div class="rule"><i></i></div>
+      <p style="color:var(--parchment)">Her advertisement has run in these books for years in whatever
+      type the printer had. This is the same copy, word for word, set properly.</p>
+    </div>
+    <div class="rv"><div class="carousel" data-carousel id="ads2">
+  <div class="carousel-track" aria-label="Gallery"><div class="carousel-slide">
+      <figure class="carousel-fig"><img src="assets/web-gen/ad-change-your-luck.jpg" alt="Change Your Luck Now" loading="lazy" decoding="async"></figure>
+      <figcaption class="carousel-cap"><b>Change Your Luck Now</b>Spiritual healer &amp; numerologist</figcaption>
+    </div><div class="carousel-slide">
+      <figure class="carousel-fig"><img src="assets/web-gen/ad-spiritual-readings.jpg" alt="Spiritual Readings" loading="lazy" decoding="async"></figure>
+      <figcaption class="carousel-cap"><b>Spiritual Readings</b>&ldquo;Don&rsquo;t consider me just another reader&rdquo;</figcaption>
+    </div><div class="carousel-slide">
+      <figure class="carousel-fig"><img src="assets/web-gen/ad-power-of-prayer.jpg" alt="God Given Power of Prayer" loading="lazy" decoding="async"></figure>
+      <figcaption class="carousel-cap"><b>God Given Power of Prayer</b>Reader &amp; advisor</figcaption>
+    </div><div class="carousel-slide">
+      <figure class="carousel-fig"><img src="assets/web-gen/ad-success-love-laughter.jpg" alt="Success, Love, Laughter" loading="lazy" decoding="async"></figure>
+      <figcaption class="carousel-cap"><b>Success, Love, Laughter</b>&ldquo;I do what others claim to do&rdquo;</figcaption>
+    </div></div>
+  <div class="carousel-nav">
+    <button class="car-btn" type="button" data-car-prev aria-label="Previous">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="car-dots"></div>
+    <button class="car-btn" type="button" data-car-next aria-label="Next">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+</div></div>
+  </div>
+</section>
+
 <section class="pad">
-  <div class="wrap"><div class="gal" data-gallery><figure class="rv rv-d1" data-lb="assets/photos/ad-01-2x.jpg">
+  <div class="wrap">
+    <div class="rv" style="max-width:640px;margin:0 auto clamp(28px,4vw,44px)">
+      <p class="eyebrow">The originals</p>
+      <h2 class="d3">Photographed from the books</h2>
+      <div class="rule left"><i></i></div>
+      <p style="color:var(--parchment)">Tap any page to read it full size.</p>
+    </div>
+    <div class="gal" data-gallery><figure class="rv rv-d1" data-lb="assets/photos/ad-01-2x.jpg">
   <img src="assets/photos/ad-01.jpg"
        srcset="assets/photos/ad-01-thumb.jpg 520w, assets/photos/ad-01.jpg 1400w"
        sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 31vw"
@@ -114,8 +160,53 @@
        sizes="(max-width:560px) 92vw, (max-width:900px) 46vw, 31vw"
        alt="Lucky Numbers" loading="lazy" decoding="async">
   <figcaption><b style="color:var(--gold-lt);display:block;letter-spacing:.1em">Lucky Numbers</b>The back pages &mdash; where readers go looking for their numbers.</figcaption>
-</figure></div></div>
+</figure></div>
+  </div>
 </section>
+
+<section class="pad tint-deep">
+  <div class="wrap">
+    <div class="center rv" style="max-width:660px;margin:0 auto clamp(30px,4vw,46px)">
+      <p class="eyebrow center">What the books sell</p>
+      <h2 class="d2">Thirty dollars a sheet.<br>A hundred a <span class="script gold">kit.</span></h2>
+      <div class="rule"><i></i></div>
+      <p style="color:var(--parchment)">These are the catalogue pages Mother&rsquo;s advertisement runs
+      alongside &mdash; tip sheets on subscription, kits at a hundred dollars, oils and lucky hands. People
+      buy them without ever speaking to anybody, and most of them never find out what they actually
+      needed.</p>
+      <p style="color:var(--parchment)"><b class="gold">Call her first.</b> The reading is free, and more
+      often than not she will tell you it is one candle and a prayer said properly.</p>
+    </div>
+    <div class="rv"><div class="carousel" data-carousel id="books">
+  <div class="carousel-track" aria-label="Gallery"><div class="carousel-slide">
+      <figure class="carousel-fig"><img src="assets/web-gen/catalog-tip-sheets.jpg" alt="Monthly Tip Sheets" loading="lazy" decoding="async"></figure>
+      <figcaption class="carousel-cap"><b>Monthly Tip Sheets</b>$30 for six months, $45 for the year</figcaption>
+    </div><div class="carousel-slide">
+      <figure class="carousel-fig"><img src="assets/web-gen/catalog-kits-mojo-bags.jpg" alt="Blessed Kits & Mojo Bags" loading="lazy" decoding="async"></figure>
+      <figcaption class="carousel-cap"><b>Blessed Kits &amp; Mojo Bags</b>$100 a kit, and up</figcaption>
+    </div><div class="carousel-slide">
+      <figure class="carousel-fig"><img src="assets/web-gen/catalog-monkey-paw.jpg" alt="Lucky Hand & Oils" loading="lazy" decoding="async"></figure>
+      <figcaption class="carousel-cap"><b>Lucky Hand &amp; Oils</b>$7.98 to $79.95</figcaption>
+    </div></div>
+  <div class="carousel-nav">
+    <button class="car-btn" type="button" data-car-prev aria-label="Previous">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="car-dots"></div>
+    <button class="car-btn" type="button" data-car-next aria-label="Next">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+</div></div>
+    <p class="small center rv" style="margin-top:2rem;max-width:60ch;margin-left:auto;margin-right:auto">
+      Shown for reference. These products and prices belong to the dream-book publishers, not to
+      Mother Powers, and she does not sell them.</p>
+    <div class="btn-row center rv" style="margin-top:2rem">
+      <a class="btn btn-solid btn-lg" href="tel:+18502641337"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Call Mother First</a>
+    </div>
+  </div>
+</section>
+
 <div class="lightbox" data-lightbox aria-hidden="true">
   <button class="close" type="button" aria-label="Close">&times;</button>
   <button class="nav-b prev" type="button" aria-label="Previous">&lsaquo;</button>
@@ -194,8 +285,33 @@
 </footer>
 <div class="callbar">
   <a class="a1" href="tel:+18502641337"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Call Mother Now</a>
-  <a class="a2" href="readings.html">The Readings</a>
+  <button class="a2" type="button" data-cart-open><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3h2.6l2.2 11.2a1.7 1.7 0 0 0 1.7 1.3h8.4a1.7 1.7 0 0 0 1.7-1.3L21 7H6"/></svg> <span data-cart-count-m>Cart</span></button>
 </div>
+
+<!-- Cart. Checkout is a phone call, by design — she asked for no online payment. -->
+<div class="cart-scrim" data-cart-scrim hidden></div>
+<aside class="cart-panel" data-cart-panel aria-hidden="true" aria-label="Cart">
+  <div class="cart-head">
+    <div>
+      <p class="eyebrow" style="margin:0 0 .3rem">Your cart</p>
+      <h2 class="d4" style="font-size:1.35rem">Ready to check out</h2>
+    </div>
+    <button class="cart-x" type="button" aria-label="Close" data-cart-close>&times;</button>
+  </div>
+  <div class="cart-body" data-cart-body></div>
+  <div class="cart-foot" data-cart-foot hidden>
+    <div class="cart-total"><span>Total</span><b data-cart-total>$0</b></div>
+    <div class="checkout-note">
+      <p class="eyebrow" style="margin:0 0 .5rem">To check out</p>
+      <p style="margin:0">Call Mother Powers and tell her what is in your cart. She takes it from
+      there &mdash; and she will tell you if you need less than you put in.</p>
+    </div>
+    <a class="btn btn-solid btn-lg cart-go" style="width:100%;margin-top:1rem" href="tel:+18502641337">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span>Check Out<b>(850) 264-1337</b></span></a>
+    <button class="cart-clear" type="button" data-cart-clear>Empty the cart</button>
+  </div>
+</aside>
+<div class="toast" data-toast aria-live="polite"></div>
 <script src="assets/js/site.js"></script>
 </body>
 </html>
