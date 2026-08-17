@@ -103,6 +103,10 @@ def head(title, desc, base="", page=""):
 
 def banner():
     return '''<div class="demo-banner" role="status">
+  <span class="theme-switch" role="group" aria-label="Colour trial">
+    <button type="button" data-theme-set="amethyst" aria-pressed="true">Amethyst</button>
+    <button type="button" data-theme-set="burgundy" aria-pressed="false">Burgundy&nbsp;&amp;&nbsp;Gold</button>
+  </span>
   <span class="dot" aria-hidden="true"></span>
   <span><b>Preview Site</b> &mdash; Built for Mother Powers by 60 Minute Sites<span class="sep hide-xs">&middot;</span><span class="hide-xs">Sample content &amp; pricing, not yet live</span></span>
   <button class="x" type="button" aria-label="Hide preview notice" data-banner-close>&times;</button>

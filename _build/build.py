@@ -163,6 +163,15 @@ def build_home():
       <img src="assets/claude-photos/hero-altar.jpg" alt="A candlelit altar with prayer candles, an open book of psalms and dried herbs" fetchpriority="high" decoding="async">
     </picture>
   </div>
+  <!-- Real smoke: green screen keyed to a true alpha channel, so it composites
+       with no blend mode and no box edge. CSS plumes stay as the fallback for
+       anything that cannot play VP9 alpha. -->
+  <div class="hero-smoke" aria-hidden="true">
+    <video class="smoke-vid" autoplay loop muted playsinline preload="auto"
+           poster="assets/video/smoke-poster.png" disablepictureinpicture>
+      <source src="assets/video/smoke-loop.webm" type="video/webm">
+    </video>
+  </div>
   <div class="incense" aria-hidden="true">
     <i class="smoke s1"></i><i class="smoke s2"></i><i class="smoke s3"></i><i class="ember"></i>
   </div>
@@ -291,6 +300,16 @@ def build_home():
     <div class="btn-row center rv" style="margin-top:clamp(28px,3.5vw,42px)">
       <a class="btn btn-ghost" href="dream-books.html">See Her Advertisements</a>
     </div>
+  </div>
+</section>
+
+<section class="pad-sm">
+  <div class="wrap center rv">
+    <p class="eyebrow center">Her card</p>
+    <img src="assets/clean-image-gen/09-calling-card.jpg"
+         alt="Mother Powers, Spiritual Healer — love, luck, success, money matters, career, health. Call (850) 264-1337"
+         style="max-width:760px;width:100%;margin:1.4rem auto 0;border:1px solid var(--line-soft);border-radius:3px"
+         loading="lazy" decoding="async">
   </div>
 </section>
 ''' + footer()
@@ -795,6 +814,13 @@ def build_contact():
       </div>
     </div>
 
+    <div class="rv" style="margin-top:clamp(34px,4.5vw,54px)">
+      <p class="eyebrow center">Her card</p>
+      <img src="assets/clean-image-gen/09-calling-card.jpg"
+           alt="Mother Powers, Spiritual Healer — love, luck, success, money matters, career, health. Call (850) 264-1337"
+           style="max-width:720px;width:100%;margin:1.2rem auto 0;border:1px solid var(--line-soft);border-radius:3px"
+           loading="lazy" decoding="async">
+    </div>
     <div class="rv" style="margin-top:clamp(30px,4vw,46px);display:flex;justify-content:center">
       <img src="assets/clean-image-gen/04-call-day-or-night.jpg"
            alt="Mother Powers — call day or night, she answers her own telephone"

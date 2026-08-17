@@ -26,6 +26,21 @@
     });
   }
 
+  /* ---- Colour trial switch (preview chrome only) ---- */
+  var THEME_KEY = 'mp-theme';
+  function setTheme(name, remember) {
+    if (name === 'burgundy') doc.documentElement.setAttribute('data-theme', 'burgundy');
+    else doc.documentElement.removeAttribute('data-theme');
+    doc.querySelectorAll('[data-theme-set]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-theme-set') === name ? 'true' : 'false');
+    });
+    if (remember) { try { localStorage.setItem(THEME_KEY, name); } catch (e) {} }
+  }
+  try { setTheme(localStorage.getItem(THEME_KEY) || 'amethyst', false); } catch (e) {}
+  doc.querySelectorAll('[data-theme-set]').forEach(function (b) {
+    b.addEventListener('click', function () { setTheme(b.getAttribute('data-theme-set'), true); });
+  });
+
   /* ---- Mobile drawer ---- */
   var burger = doc.querySelector('[data-menu]');
   var drawer = doc.querySelector('.drawer');
@@ -371,6 +386,20 @@
     });
     sync();
   });
+
+  /* ---- Hero smoke: only stand the CSS plumes down once the video really plays ---- */
+  var smokeVid = doc.querySelector('.smoke-vid');
+  if (smokeVid) {
+    var okReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (okReduced) {
+      smokeVid.remove();
+    } else {
+      smokeVid.addEventListener('playing', function () { body.classList.add('has-smoke-video'); }, { once: true });
+      smokeVid.addEventListener('error', function () { body.classList.remove('has-smoke-video'); });
+      var p = smokeVid.play();
+      if (p && p.catch) p.catch(function () { /* autoplay blocked — CSS plumes carry it */ });
+    }
+  }
 
   /* ---- Footer year ---- */
   doc.querySelectorAll('[data-year]').forEach(function (el) {

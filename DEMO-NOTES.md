@@ -134,3 +134,47 @@ real smoke plate, luminance baked into the alpha channel so the PNG carries its
 own transparency — no `mix-blend-mode`, which was showing the element's box edge
 as a faint rectangle. Three plumes on staggered timings, transform and opacity
 only, and it disables itself under `prefers-reduced-motion`.
+
+
+## Real smoke in the hero
+
+Her green-screen clip, keyed properly. Rather than a hard chromakey (which
+shreds semi-transparent smoke), the alpha is derived from the red and blue
+channels: the screen is saturated green so R+B scores about 16, while white
+smoke scores about 200. That separates cleanly and keeps every soft wisp.
+
+Encoded as VP9/WebM with a genuine alpha channel, so it composites with no
+blend mode and cannot show a box edge. 22 seconds, 674KB, seamless — the loop
+is a palindrome (forward then reversed), built on the source before keying so
+ffmpeg's reverse filter never has to handle alpha. Held at 50% opacity with the
+edges feathered by a CSS mask.
+
+If a browser can't play VP9 alpha, or autoplay is blocked, the CSS plumes stay
+put and carry it. `prefers-reduced-motion` removes the video entirely.
+
+## Colour trial: burgundy & gold
+
+Her grandson's request, wired as a real theme rather than a rewrite. Every
+colour in the stylesheet now runs through tokens — including the surface family,
+which is expressed as raw RGB channels (`--surf-rgb`, `--deep-rgb`) so one
+override repaints all 90-odd panels, scrims and glows.
+
+**There is a switch in the preview banner, top left: Amethyst / Burgundy & Gold.**
+Flip it live for her. The choice sticks in localStorage.
+
+Burgundy takes the gold into the accent role, puts a gold plate with deep-wine
+lettering on the primary buttons, and warms the keyed smoke so it reads as
+candle smoke rather than cool vapour.
+
+To make it permanent: put `data-theme="burgundy"` on `<html>` in
+`_build/shell.py` and drop the switch.
+
+## Her calling card
+
+`assets/clean-image-gen/09-calling-card.png`, renamed from the ChatGPT export.
+On the home page above the call band, and on the contact page.
+
+**Heads up:** the card prints 1805 Gibbs Drive. I have kept her street address
+out of the site copy deliberately (PO Box only) since she wants national reach
+and works from home. It is now visible on two pages via the card image. Worth a
+direct question before launch.
