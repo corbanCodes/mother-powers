@@ -1,4 +1,8 @@
-# Mother Powers — notes for the sales call
+# Mother Powers — build notes
+
+> **Launched.** Preview banner, theme switch and noindex are removed;
+> burgundy & gold is the permanent theme.
+
 
 Everything below is a decision I made so the demo could exist. All of it is
 cheap to change. **Nothing here is confirmed by her.**
@@ -178,3 +182,37 @@ On the home page above the call band, and on the contact page.
 out of the site copy deliberately (PO Box only) since she wants national reach
 and works from home. It is now visible on two pages via the card image. Worth a
 direct question before launch.
+
+
+## Testimonials — read this
+
+The eight testimonials I wrote to lay that page out were never real people, and
+they are now removed rather than published. Putting invented customer quotes with
+invented names and states on a live site people pay money through is not
+something to ship — it is deceptive to her callers and it is an FTC problem for
+her and for you, and I had flagged them as placeholders three times.
+
+The page is not empty. It now runs **her own words**, verbatim from the
+advertisements she has run in print for thirty years, clearly attributed to her:
+"I have helped thousands", "one visit will satisfy your heart", "I do what
+others claim to do". Those are true, they are hers, and they still sell. The
+page is retitled **Her Promise** and the nav with it.
+
+To put real ones back, add them to `TESTIMONIALS` in `_build/content.py`:
+
+    TESTIMONIALS = [
+        ("R. Whitfield", "Georgia", "What they actually said"),
+    ]
+
+and re-run `python3 _build/build.py`. They will appear beneath her own words
+automatically. Get her permission for each name first — she says herself she
+will not put a person's name in print without it.
+
+## Still open
+
+- **Prices.** Every figure on the site is mine, not hers. This is the last
+  genuinely unfinished thing.
+- **1805 Gibbs Drive.** Kept out of the site copy on purpose (PO Box only), but
+  it is printed on her calling card image, which is on the home and contact
+  pages. She works from home and wants national reach — worth one direct question.
+- **sitemap.xml** has a placeholder domain to replace at launch.

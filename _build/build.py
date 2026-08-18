@@ -7,7 +7,7 @@ OUT = os.path.dirname(HERE)
 from shell import (head, banner, header, footer, callband, rule, ICON, MARK,
                    TEL_MAIN, TEL_MAIN_FMT, TEL_ALT, TEL_ALT_FMT, CASHAPP, PO_BOX)
 from content import (CATEGORIES, OFFERINGS, TESTIMONIALS, FAQ, DREAM_BOOKS,
-                     CANDLES, INCENSE, PRAYERS, DREAM_SIGNS, NUMEROLOGY)
+                     CANDLES, INCENSE, PRAYERS, DREAM_SIGNS, NUMEROLOGY, HER_WORDS)
 
 def write(path, html):
     full = os.path.join(OUT, path)
@@ -60,6 +60,13 @@ def category_tile(c, base="", delay=0):
   </div>
   <a class="stretch" href="{base}readings.html#{key}" aria-label="{strip_tags(name)}"></a>
 </article>'''
+
+def word_block(w, delay=0):
+    text, src = w
+    return f'''<figure class="quote rv rv-d{delay}">
+  <blockquote>&ldquo;{text}&rdquo;</blockquote>
+  <cite><b>Mother Powers</b>{src}</cite>
+</figure>'''
 
 def quote_block(t, delay=0):
     name, state, text = t
@@ -142,7 +149,7 @@ def build_home():
     cats = "".join(category_tile(c, delay=i % 6 + 1) for i, c in enumerate(CATEGORIES))
     featured = [BY_SLUG[s] for s in ("reunite-the-separated","jinx-removal","lucky-numbers-reading","money-drawing")]
     feat = "".join(f'<div class="rv rv-d{i+1}">{offering_card(o)}</div>' for i, o in enumerate(featured))
-    quotes = "".join(quote_block(t, i % 3 + 1) for i, t in enumerate(TESTIMONIALS[:3]))
+    quotes = "".join(word_block(w, i % 3 + 1) for i, w in enumerate(HER_WORDS[:3]))
     steps = [
       ("Pick up the telephone", "You dial the number and Mother Powers answers it herself. Day or night \u2014 she has taken calls at two in the morning."),
       ("Tell her what is wrong", "In your own words, at your own pace. She has heard it before and she does not judge anybody. This part is free."),
@@ -271,13 +278,13 @@ def build_home():
 <section class="pad tint">
   <div class="wrap">
     <div class="center rv" style="max-width:620px;margin:0 auto clamp(38px,5vw,58px)">
-      <p class="eyebrow center">In Their Own Words</p>
+      <p class="eyebrow center">Her promise, in print for thirty years</p>
       <h2 class="d2">One call will<br><span class="script gold">convince you</span></h2>
       {rule()}
     </div>
     <div class="grid g3">{quotes}</div>
     <div class="btn-row center rv" style="margin-top:clamp(34px,4vw,52px)">
-      <a class="btn" href="testimonials.html">Read More</a>
+      <a class="btn" href="testimonials.html">Read Her Promise</a>
     </div>
   </div>
 </section>
@@ -672,12 +679,15 @@ def build_lucky():
 ''' + footer()
 
 def build_testimonials():
-    quotes = "".join(quote_block(t, i % 4 + 1) for i, t in enumerate(TESTIMONIALS))
-    return head("Testimonials", "What people say after calling Mother Powers.",
+    quotes = "".join(word_block(w, i % 4 + 1) for i, w in enumerate(HER_WORDS))
+    if TESTIMONIALS:
+        quotes += "".join(quote_block(t, i % 4 + 1) for i, t in enumerate(TESTIMONIALS))
+    return head("Her Promise", "What Mother Powers has promised in print for over thirty years.",
         page="testimonials.html") + banner() + header("testimonials.html") + \
         page_hero("One call will<br><span class='script gold'>convince you.</span>",
-            "Mother Powers does not ask anybody for a review and she does not put names in print without "
-            "permission. These are from people who called back and said she could use their words.",
+            "Mother Powers does not ask anybody for a review, and she will not put a person's name in "
+            "print without their permission. What she will do is stand behind what she has promised in "
+            "print for over thirty years.",
             "testimonial-altar", ['<a href="index.html">Home</a>', 'Testimonials'],
             eyebrow="In their own words") + f'''
 <!-- ============================================================
@@ -691,9 +701,10 @@ def build_testimonials():
 </section>
 <section class="pad-sm tint-deep">
   <div class="wrap narrow center rv">
-    <p class="small">Individual experiences vary and no outcome is promised or guaranteed. Testimonials
-    reflect the personal experience of the people quoted. Readings and spiritual work are offered for
-    personal guidance and comfort, for adults 18 and over.</p>
+    <p class="small">Individual experiences vary and no outcome is promised or guaranteed. Readings and
+    spiritual work are offered for personal guidance and comfort, for adults 18 and over. If Mother
+    Powers has helped you and you would like your words on this page, tell her on the telephone &mdash;
+    nothing goes in print without your permission.</p>
   </div>
 </section>
 ''' + footer()

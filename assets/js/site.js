@@ -3,44 +3,6 @@
   'use strict';
   var doc = document, body = doc.body;
 
-  /* ---- Preview banner: dismiss for the session ---- */
-  var bannerEl = doc.querySelector('.demo-banner');
-  function sizeBanner() {
-    if (!bannerEl) return;
-    var h = body.classList.contains('banner-hidden') ? 0 : bannerEl.offsetHeight;
-    doc.documentElement.style.setProperty('--banner-h', h + 'px');
-  }
-  sizeBanner();
-  window.addEventListener('resize', sizeBanner, { passive: true });
-  if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(sizeBanner);
-
-  var bannerBtn = doc.querySelector('[data-banner-close]');
-  if (bannerBtn) {
-    try {
-      if (sessionStorage.getItem('mp-banner') === 'off') { body.classList.add('banner-hidden'); sizeBanner(); }
-    } catch (e) {}
-    bannerBtn.addEventListener('click', function () {
-      body.classList.add('banner-hidden');
-      sizeBanner();
-      try { sessionStorage.setItem('mp-banner', 'off'); } catch (e) {}
-    });
-  }
-
-  /* ---- Colour trial switch (preview chrome only) ---- */
-  var THEME_KEY = 'mp-theme';
-  function setTheme(name, remember) {
-    if (name === 'burgundy') doc.documentElement.setAttribute('data-theme', 'burgundy');
-    else doc.documentElement.removeAttribute('data-theme');
-    doc.querySelectorAll('[data-theme-set]').forEach(function (b) {
-      b.setAttribute('aria-pressed', b.getAttribute('data-theme-set') === name ? 'true' : 'false');
-    });
-    if (remember) { try { localStorage.setItem(THEME_KEY, name); } catch (e) {} }
-  }
-  try { setTheme(localStorage.getItem(THEME_KEY) || 'amethyst', false); } catch (e) {}
-  doc.querySelectorAll('[data-theme-set]').forEach(function (b) {
-    b.addEventListener('click', function () { setTheme(b.getAttribute('data-theme-set'), true); });
-  });
-
   /* ---- Mobile drawer ---- */
   var burger = doc.querySelector('[data-menu]');
   var drawer = doc.querySelector('.drawer');

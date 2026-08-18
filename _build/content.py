@@ -187,15 +187,29 @@ OFFERINGS = [
    "it means, and she will give you the numbers that go with it."]),
 ]
 
-TESTIMONIALS = [
- ("R. Whitfield", "Georgia", "I called about my husband and I did not expect much. She told me things about my house that nobody outside my family knows. I have called her every month since."),
- ("D. Meeks", "Texas", "My luck had been bad for two years straight. Every single thing. Mother told me where it started and it was exactly who I thought it was. Three weeks later I got my job back."),
- ("Patricia L.", "Ohio", "I did not want to fill out any forms and I did not want to talk to a secretary. She picked up the phone herself and she prayed with me for forty minutes. She never once rushed me."),
- ("J. Boone", "Alabama", "She gave me my numbers off a dream I had about my mother. I do not want to say how much I hit for but I paid her back double and she tried to give it back."),
- ("Ms. Carrington", "North Carolina", "She told me plain that my situation was natural and there was nothing to remove, and she did not charge me a dime for saying so. That is how I knew she was real."),
- ("Earl T.", "Mississippi", "I have been reading her advertisement in the books for years before I ever called. I wish I had called sooner. That is the whole review."),
- ("Yolanda S.", "Illinois", "My house had not been peaceful since my daddy passed. She cleansed it over the phone and told me two things to do myself. My children sleep now."),
- ("Anonymous", "California", "It is private, like going to a psychiatrist, except she actually tells you something. No e-mails, no forms, nobody else knows I called."),
+# --------------------------------------------------------------------------
+# Real client testimonials go here, and nothing else. The previous entries were
+# written by 60 Minute Sites to lay the page out and were never real people —
+# they are removed rather than published. Drop genuine, permitted quotes in and
+# the page fills itself back in automatically.
+#   ("Name", "State", "What they said")
+TESTIMONIALS = []
+
+# Mother Powers' own words, taken verbatim from the advertisements she has run
+# in print for over thirty years. These are hers, and they are true.
+HER_WORDS = [
+ ("I have appeared on television. You have heard me on the radio. You have read about me in the newspaper.",
+  "From her printed advertisement"),
+ ("I have helped thousands. During many years of practice I have brought together many in marriage, and reunited many who were separated.",
+  "From her printed advertisement"),
+ ("What you see and hear, your heart must believe. One visit will satisfy your heart, and you will see.",
+  "From her printed advertisement"),
+ ("I promise I won't disappoint you. Why suffer, when I can help? If you give me a chance, I can help you to find happiness, contentment, peace of mind.",
+  "From her printed advertisement"),
+ ("I do what others claim to do. I can help where others have failed.",
+  "From her printed advertisement"),
+ ("God did not put you here to suffer. He put you here for a purpose. I can help you.",
+  "From her printed advertisement"),
 ]
 
 FAQ = [

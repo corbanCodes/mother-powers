@@ -1,3 +1,4 @@
-# Preview site — not for indexing until approved and launched.
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: /sitemap.xml

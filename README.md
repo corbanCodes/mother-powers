@@ -1,7 +1,9 @@
-# Mother Powers — Preview Site
+# Mother Powers
 
-A static demo site for **Mother Powers**, Spiritual Healer, Reader & Numerologist
-(Tallahassee, FL). Built by 60 Minute Sites ahead of the sales call.
+The live site for **Mother Powers**, Spiritual Healer, Reader & Numerologist
+(Tallahassee, FL). Built by 60 Minute Sites.
+
+Theme is burgundy & gold, set with `data-theme="burgundy"` on `<html>`.
 
 **Plain HTML, CSS and JavaScript.** No build step is required to deploy — push the
 folder to any static host (GitHub Pages, Netlify, Cloudflare Pages, Railway).
@@ -20,7 +22,7 @@ dream-books.html        Her printed dream-book ads (lightbox gallery)
 faq.html                Questions
 contact.html            Phone, mail, Cash App
 privacy.html terms.html Draft legal pages
-robots.txt              Disallow — this is a preview, do not index
+robots.txt sitemap.xml  Indexable. Put the real domain in sitemap.xml.
 
 assets/css/site.css     The whole design system (one file)
 assets/js/site.js       Nav, reveals, accordion, lightbox (no dependencies)
